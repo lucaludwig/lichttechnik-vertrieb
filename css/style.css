@@ -998,6 +998,14 @@ body {
 
 .product-card .card-body {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card h3 {
@@ -1016,7 +1024,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
   font-weight: 600;
