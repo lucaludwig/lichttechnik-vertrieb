@@ -41,14 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Stats counter animation using IntersectionObserver
-  const statsSection = document.querySelector('.trust-bar') || document.querySelector('.stats');
-  if (statsSection) {
-    const statNumbers = statsSection.querySelectorAll('.trust-number, .stat-number');
+  const statsSections = document.querySelectorAll('.trust-bar, .stats-strip, .stats');
+  statsSections.forEach(section => {
+    const statNumbers = section.querySelectorAll('.trust-number, .stat-number');
+    if (statNumbers.length === 0) return;
+
     const statsObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           statNumbers.forEach(el => {
             const target = parseInt(el.getAttribute('data-target'));
+            if (!target) return;
             const duration = 2000;
             const start = performance.now();
 
@@ -71,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.2 });
 
-    statsObserver.observe(statsSection);
-  }
+    statsObserver.observe(section);
+  });
 
   // Fade-in on scroll
   const fadeElements = document.querySelectorAll('.fade-in');

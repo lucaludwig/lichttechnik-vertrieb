@@ -348,7 +348,7 @@ body {
 /* ========== Trust Bar ========== */
 .trust-bar {
   background: white;
-  padding: 3rem 0;
+  padding: 2rem 0;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -356,12 +356,47 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 
 .trust-item {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.trust-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(212, 160, 23, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.trust-headline {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.2;
+}
+
+.trust-detail {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.trust-detail a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.trust-detail a:hover {
+  color: var(--accent);
 }
 
 .trust-number {
@@ -382,19 +417,174 @@ body {
 
 .trust-divider {
   width: 1px;
-  height: 48px;
+  height: 40px;
   background: #e5e7eb;
 }
 
 @media (max-width: 768px) {
   .trust-items {
-    gap: 2rem;
+    gap: 1.5rem;
+    justify-content: flex-start;
   }
   .trust-divider {
     display: none;
   }
-  .trust-number {
-    font-size: 2.25rem;
+  .trust-item {
+    min-width: 45%;
+  }
+}
+
+/* ========== Stats Strip ========== */
+.stats-strip {
+  background: var(--primary-dark);
+  padding: 3.5rem 0;
+}
+
+.stats-strip-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.stats-strip-item {
+  text-align: center;
+}
+
+.stats-strip .trust-number {
+  color: var(--accent);
+  font-size: 3.25rem;
+}
+
+.stats-strip-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .stats-strip-items {
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .stats-strip .trust-number {
+    font-size: 2.5rem;
+  }
+}
+
+/* ========== Application Areas ========== */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.area-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+}
+
+.area-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(212, 160, 23, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: var(--primary);
+}
+
+.area-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.area-card p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .areas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .areas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== Certification Strip ========== */
+.cert-strip {
+  background: var(--bg-alt);
+  padding: 3rem 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cert-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--primary-dark);
+}
+
+.cert-item img {
+  height: 42px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.cert-item svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.cert-item strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.cert-item span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .cert-items {
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+  .cert-item {
+    min-width: 45%;
   }
 }
 
@@ -606,6 +796,22 @@ body {
   gap: 2rem;
 }
 
+.services-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .services-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
 .service-card {
   background: white;
   border-radius: var(--radius);
@@ -675,16 +881,15 @@ body {
 .project-card .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15, 39, 68, 0.8), transparent 60%);
+  background: linear-gradient(to top, rgba(15, 39, 68, 0.85), transparent 50%);
   display: flex;
   align-items: flex-end;
   padding: 1.5rem;
-  opacity: 0;
-  transition: opacity 0.3s;
+  transition: background 0.3s;
 }
 
 .project-card:hover .overlay {
-  opacity: 1;
+  background: linear-gradient(to top, rgba(15, 39, 68, 0.9), rgba(15, 39, 68, 0.1) 70%);
 }
 
 .project-card .overlay h3 {
@@ -773,14 +978,23 @@ body {
 /* ========== Process Steps ========== */
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  margin-top: 3rem;
 }
 
 .process-step {
   text-align: center;
   position: relative;
+}
+
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  right: -1rem;
+  width: calc(2rem);
+  height: 2px;
+  background: #e5e7eb;
 }
 
 .step-number {
@@ -795,6 +1009,8 @@ body {
   font-size: 1.5rem;
   font-weight: 800;
   margin: 0 auto 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .process-step h3 {
@@ -807,6 +1023,21 @@ body {
   color: var(--text-light);
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-step::after {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ========== FAQ Accordion ========== */
