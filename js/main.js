@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Stats counter animation using IntersectionObserver
-  const statsSection = document.querySelector('.stats');
+  const statsSection = document.querySelector('.trust-bar') || document.querySelector('.stats');
   if (statsSection) {
-    const statNumbers = statsSection.querySelectorAll('.stat-number');
+    const statNumbers = statsSection.querySelectorAll('.trust-number, .stat-number');
     const statsObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
