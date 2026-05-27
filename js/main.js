@@ -134,4 +134,23 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'mailto:info@lichttechnik-vertrieb.de?subject=' + subject + '&body=' + body;
     });
   }
+
+  // Sticky CTA — hide when footer is visible
+  const stickyCta = document.querySelector('.sticky-cta');
+  if (stickyCta) {
+    const footer = document.querySelector('.footer');
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          stickyCta.classList.add('hidden');
+        } else {
+          stickyCta.classList.remove('hidden');
+        }
+      });
+    }, { threshold: 0 });
+
+    if (footer) {
+      stickyObserver.observe(footer);
+    }
+  }
 });
