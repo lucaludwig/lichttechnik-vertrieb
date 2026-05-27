@@ -93,6 +93,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach(el => fadeObserver.observe(el));
 
+  // Before/After sliders
+  document.querySelectorAll('.before-after').forEach(container => {
+    const slider = container.querySelector('.before-after-slider');
+    const beforeDiv = container.querySelector('.before-after-before');
+    const line = container.querySelector('.before-after-line');
+    if (!slider || !beforeDiv || !line) return;
+
+    // Size the before image to match the container width
+    const beforeImg = beforeDiv.querySelector('img');
+    if (beforeImg) {
+      const setImgWidth = () => { beforeImg.style.width = container.offsetWidth + 'px'; };
+      setImgWidth();
+      window.addEventListener('resize', setImgWidth);
+    }
+
+    slider.addEventListener('input', () => {
+      const val = slider.value + '%';
+      beforeDiv.style.width = val;
+      line.style.left = val;
+    });
+  });
+
   // Pre-fill contact form from URL params (e.g. ?produkt=Deckenleuchten)
   const params = new URLSearchParams(window.location.search);
   const produktParam = params.get('produkt');
