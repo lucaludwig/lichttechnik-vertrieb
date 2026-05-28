@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Sticky CTA — hide when footer is visible
+  // Sticky CTA - hide when footer is visible
   const stickyCta = document.querySelector('.sticky-cta');
   if (stickyCta) {
     const footer = document.querySelector('.footer');
