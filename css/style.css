@@ -482,6 +482,16 @@ body {
   gap: 1.5rem;
 }
 
+.areas-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .areas-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .area-card {
   background: white;
   border: 1px solid #e5e7eb;
