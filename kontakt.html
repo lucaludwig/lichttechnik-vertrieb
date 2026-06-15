@@ -64,7 +64,11 @@
 
           <div id="form-status" hidden></div>
 
-          <form id="contact-form" method="POST" action="contact.php">
+          <form id="contact-form" method="POST" action="https://api.web3forms.com/submit">
+            <input type="hidden" name="access_key" value="c3ef2096-48e6-46d4-8b3e-f3fa1a50432b">
+            <input type="hidden" name="subject" value="Kontaktanfrage über lichttechnik-vertrieb.de">
+            <input type="hidden" name="redirect" value="https://lichttechnik-vertrieb.de/kontakt.html?status=erfolg">
+            <input type="checkbox" name="botcheck" style="display:none">
             <div class="form-group">
               <label for="name">Name *</label>
               <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
