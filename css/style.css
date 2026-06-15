@@ -2056,3 +2056,22 @@ body {
   font-weight: 800;
   color: var(--accent);
 }
+
+/* Formular-Statusmeldungen (Kontaktseite) */
+.form-alert {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.form-alert-success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+.form-alert-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}

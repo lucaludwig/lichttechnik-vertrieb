@@ -62,7 +62,9 @@
           <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Schreiben Sie mir</h2>
           <p style="color: #6b7280; margin-bottom: 2rem;">Füllen Sie das Formular aus und ich melde mich bei Ihnen.</p>
 
-          <form id="contact-form">
+          <div id="form-status" hidden></div>
+
+          <form id="contact-form" method="POST" action="contact.php">
             <div class="form-group">
               <label for="name">Name *</label>
               <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
@@ -178,7 +180,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; 2025 Rainer Ludwig. Alle Rechte vorbehalten.
+        &copy; 2026 Rainer Ludwig. Alle Rechte vorbehalten.
       </div>
     </div>
   </footer>

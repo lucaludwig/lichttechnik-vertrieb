@@ -125,36 +125,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Contact form handler
-  const contactForm = document.querySelector('#contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
-
-      const name = contactForm.querySelector('[name="name"]').value;
-      const email = contactForm.querySelector('[name="email"]').value;
-      const telefon = contactForm.querySelector('[name="telefon"]').value;
-      const message = contactForm.querySelector('[name="message"]').value;
-
-      const subject = encodeURIComponent('Kontaktanfrage von ' + name);
-      const bodyParts = [
-        'Name: ' + name,
-        'E-Mail: ' + email
-      ];
-      if (telefon) {
-        bodyParts.push('Telefon: ' + telefon);
-      }
-      bodyParts.push('', 'Nachricht:', message);
-      const body = encodeURIComponent(bodyParts.join('\n'));
-
-      alert('Ihr E-Mail-Programm wird geöffnet. Falls Sie kein E-Mail-Programm eingerichtet haben, senden Sie Ihre Anfrage bitte direkt an info@lichttechnik-vertrieb.de');
-      window.location.href = 'mailto:info@lichttechnik-vertrieb.de?subject=' + subject + '&body=' + body;
-    });
+  // Statusmeldung nach PHP-Formular-Submit anzeigen
+  const statusParam = params.get('status');
+  const formStatus = document.querySelector('#form-status');
+  if (statusParam && formStatus) {
+    formStatus.removeAttribute('hidden');
+    if (statusParam === 'erfolg') {
+      formStatus.className = 'form-alert form-alert-success';
+      formStatus.textContent = 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich melde mich so schnell wie möglich bei Ihnen.';
+    } else {
+      formStatus.className = 'form-alert form-alert-error';
+      formStatus.textContent = 'Leider ist beim Senden ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie mich direkt per E-Mail: info@lichttechnik-vertrieb.de';
+    }
+    // URL bereinigen ohne Seitenreload
+    history.replaceState(null, '', window.location.pathname);
   }
 
   // Sticky CTA - hide when footer is visible
