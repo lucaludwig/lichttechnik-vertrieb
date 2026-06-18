@@ -2057,6 +2057,225 @@ body {
   color: var(--accent);
 }
 
+/* ========== Umrüstung Seite ========== */
+.umruestung-kategorie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .umruestung-kategorie-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3 Wege - vertikale Karten */
+.umruestung-wege {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.umruestung-weg {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  transition: all 0.3s;
+}
+
+.umruestung-weg:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border-color: var(--accent);
+}
+
+.umruestung-weg-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.umruestung-weg-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.umruestung-weg-header p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.umruestung-weg-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1.25rem;
+}
+
+.umruestung-weg-details li {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.umruestung-weg-details li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.umruestung-weg-details li strong {
+  color: var(--text);
+}
+
+/* Vorher/Nachher Vergleich */
+.umruestung-beispiel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
+
+.umruestung-beispiel:last-child {
+  margin-bottom: 0;
+}
+
+.umruestung-beispiel:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.umruestung-vergleich {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 2.5rem;
+  background: var(--bg-alt);
+}
+
+.umruestung-vorher,
+.umruestung-nachher {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.umruestung-vorher img,
+.umruestung-nachher img {
+  max-height: 180px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.umruestung-vorher p,
+.umruestung-nachher p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+.umruestung-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.umruestung-label-alt {
+  background: rgba(107, 114, 128, 0.1);
+  color: var(--text-light);
+}
+
+.umruestung-label-neu {
+  background: rgba(212, 160, 23, 0.15);
+  color: var(--accent-hover);
+}
+
+.umruestung-pfeil {
+  color: var(--accent);
+  flex-shrink: 0;
+  padding: 0 0.5rem;
+}
+
+.umruestung-beschreibung {
+  padding: 1.75rem 2.5rem;
+}
+
+.umruestung-beschreibung h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.umruestung-beschreibung p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.umruestung-ersparnis {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(212, 160, 23, 0.08);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.umruestung-ersparnis svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .umruestung-vergleich {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .umruestung-pfeil {
+    transform: rotate(90deg);
+  }
+  .umruestung-beschreibung {
+    padding: 1.25rem 1.5rem;
+  }
+  .umruestung-weg {
+    padding: 1.5rem;
+  }
+  .umruestung-weg-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
 /* Formular-Statusmeldungen (Kontaktseite) */
 .form-alert {
   padding: 1rem 1.25rem;
