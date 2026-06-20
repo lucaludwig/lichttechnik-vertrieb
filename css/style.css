@@ -434,6 +434,14 @@ body {
   }
 }
 
+/* ========== Aktuelles Highlight ========== */
+.aktuelles-highlight {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.06) 0%, rgba(30, 58, 95, 0.04) 100%);
+  border-top: 3px solid var(--accent);
+  border-bottom: 1px solid #e5e7eb;
+}
+
 /* ========== Stats Strip ========== */
 .stats-strip {
   background: var(--primary-dark);
