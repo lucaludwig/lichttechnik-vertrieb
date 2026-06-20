@@ -2263,6 +2263,11 @@ body {
   flex-shrink: 0;
 }
 
+.umruestung-weg-header .step-number {
+  margin: 0;
+  flex-shrink: 0;
+}
+
 @media (max-width: 640px) {
   .umruestung-vergleich {
     flex-direction: column;
