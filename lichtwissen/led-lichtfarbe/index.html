@@ -87,6 +87,10 @@
     .kelvin-scale-bar { height: 14px; border-radius: 7px; background: linear-gradient(to right, #ff9d3c 0%, #ffd9a0 30%, #fdf6e3 55%, #e8f0fe 78%, #cfe0ff 100%); }
     .kelvin-scale-labels { display: flex; justify-content: space-between; font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; }
     .kelvin-scale-labels strong { display: block; color: #111827; }
+    /* Bilder im Original-Seitenverhältnis zeigen statt 4/3-Zuschnitt */
+    .about-image.is-square { aspect-ratio: 1/1; }
+    .about-image.is-portrait { aspect-ratio: 3/4; }
+    .about-image.is-square::after, .about-image.is-portrait::after { display: none; }
   </style>
 </head>
 <body>
@@ -134,7 +138,7 @@
   <section class="section-spacious">
     <div class="container">
       <div class="about-split">
-        <div class="about-image fade-in">
+        <div class="about-image is-square fade-in">
           <img src="../../images/lichtwissen-watt-lumen.jpg" alt="Vergleich: Watt misst Energieverbrauch, Lumen misst Helligkeit" width="900" height="900">
         </div>
         <div class="about-text fade-in">
@@ -151,7 +155,7 @@
   <section class="section-spacious section-alt">
     <div class="container">
       <div class="about-split about-split-reversed">
-        <div class="about-image fade-in">
+        <div class="about-image is-portrait fade-in">
           <img src="../../images/lichtwissen-kelvin.jpg" alt="Derselbe Raum unter verschiedenen Farbtemperaturen von warmweiß bis tageslichtweiß" loading="lazy" width="675" height="900">
         </div>
         <div class="about-text fade-in">
