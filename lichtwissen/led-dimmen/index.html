@@ -89,8 +89,10 @@
     .dimm-table th { background: #f9fafb; color: #374151; font-weight: 600; }
     .dimm-table tr:last-child td { border-bottom: none; }
     @media (max-width: 640px) { .dimm-table { font-size: 0.85rem; } .dimm-table th, .dimm-table td { padding: 0.5rem; } }
+    /* ponytail: Hero ist 900x532 (Landscape), Symbol ist ~1:1 */
+    .about-image.is-wide { aspect-ratio: 900/532; }
+    .about-image.is-wide::after, .about-image.is-square::after { display: none; }
     .about-image.is-square { aspect-ratio: 1/1; }
-    .about-image.is-square::after { display: none; }
   </style>
 </head>
 <body>
@@ -138,8 +140,8 @@
   <section class="section-spacious">
     <div class="container">
       <div class="about-split">
-        <div class="about-image is-square fade-in">
-          <img src="../../images/lichtwissen-led-dimmen.jpg" alt="Gedimmte LED-Beleuchtung in einem Wohnraum" width="900" height="900">
+        <div class="about-image is-wide fade-in">
+          <img src="../../images/lichtwissen-led-dimmen.jpg" alt="Illustration: Glühbirne bei voller Helligkeit (links, warmweiß) und gedimmt (rechts, kühleres Licht)" width="900" height="532">
         </div>
         <div class="about-text fade-in">
           <span class="section-label">Grundlagen des Dimmens</span>
@@ -302,7 +304,7 @@
     <div class="container">
       <div class="about-split about-split-reversed">
         <div class="about-image is-square fade-in">
-          <img src="../../images/lichtwissen-dimmbar-symbol.png" alt="Symbol für dimmbare LEDs auf der Verpackung" loading="lazy" width="400" height="400">
+          <img src="../../images/lichtwissen-dimmbar-symbol.png" alt="Dimmbar-Symbol: Dreieck mit Drehregler — dieses Zeichen auf der LED-Verpackung bedeutet dimmbar" loading="lazy" width="213" height="211">
         </div>
         <div class="about-text fade-in">
           <span class="section-label">Wichtig für den Alltag</span>
