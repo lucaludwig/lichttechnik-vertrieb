@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 532" width="900" height="532">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="glow-on" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="glow-off" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <filter id="light-glow">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="532" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#94a3b8" stroke-width="0.5">
+    <line x1="0" y1="133" x2="900" y2="133"/>
+    <line x1="0" y1="266" x2="900" y2="266"/>
+    <line x1="0" y1="399" x2="900" y2="399"/>
+    <line x1="225" y1="0" x2="225" y2="532"/>
+    <line x1="450" y1="0" x2="450" y2="532"/>
+    <line x1="675" y1="0" x2="675" y2="532"/>
+  </g>
+
+  <!-- LEFT: LED ON -->
+  <g transform="translate(260, 200)">
+    <!-- Glow aura -->
+    <circle cx="0" cy="0" r="90" fill="#fbbf24" opacity="0.08" filter="url(#light-glow)"/>
+    <circle cx="0" cy="0" r="60" fill="#fbbf24" opacity="0.12"/>
+
+    <!-- Bulb body -->
+    <ellipse cx="0" cy="-10" rx="38" ry="42" fill="url(#glow-on)" filter="url(#soft-shadow)"/>
+    <!-- Bulb base -->
+    <rect x="-18" y="28" width="36" height="20" rx="3" fill="#d4d4d8"/>
+    <rect x="-18" y="32" width="36" height="4" fill="#a1a1aa"/>
+    <rect x="-18" y="40" width="36" height="4" fill="#a1a1aa"/>
+    <!-- Filament lines -->
+    <path d="M-8 -5 Q0 -25 8 -5" stroke="#fef3c7" stroke-width="2.5" fill="none" opacity="0.9"/>
+    <path d="M-5 0 Q0 -15 5 0" stroke="#fef3c7" stroke-width="2" fill="none" opacity="0.7"/>
+
+    <!-- ON label -->
+    <text x="0" y="80" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#fbbf24" letter-spacing="2">EIN</text>
+  </g>
+
+  <!-- Power symbol (center) -->
+  <g transform="translate(450, 200)">
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#64748b" stroke-width="3" stroke-dasharray="220 60" stroke-dashoffset="45" opacity="0.5"/>
+    <line x1="0" y1="-48" x2="0" y2="-18" stroke="#64748b" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Arrows -->
+    <path d="M-70 0 L-55 0 M-58 -5 L-55 0 L-58 5" stroke="#94a3b8" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
+    <path d="M55 0 L70 0 M67 -5 L70 0 L67 5" stroke="#94a3b8" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+    <!-- Cycle count hint -->
+    <text x="0" y="80" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8" opacity="0.6">15.000 – 100.000 Zyklen</text>
+  </g>
+
+  <!-- RIGHT: LED OFF -->
+  <g transform="translate(640, 200)">
+    <!-- Bulb body (dark) -->
+    <ellipse cx="0" cy="-10" rx="38" ry="42" fill="url(#glow-off)" filter="url(#soft-shadow)"/>
+    <!-- Bulb base -->
+    <rect x="-18" y="28" width="36" height="20" rx="3" fill="#d4d4d8"/>
+    <rect x="-18" y="32" width="36" height="4" fill="#a1a1aa"/>
+    <rect x="-18" y="40" width="36" height="4" fill="#a1a1aa"/>
+    <!-- No filament glow -->
+    <path d="M-8 -5 Q0 -25 8 -5" stroke="#64748b" stroke-width="2" fill="none" opacity="0.3"/>
+
+    <!-- OFF label -->
+    <text x="0" y="80" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#64748b" letter-spacing="2">AUS</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <text x="450" y="380" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#cbd5e1" opacity="0.5">Schaltfestigkeit bestimmt der Treiber, nicht die LED</text>
+
+  <!-- Top-left subtle label -->
+  <text x="40" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#64748b" letter-spacing="3" opacity="0.4">LICHTWISSEN</text>
+</svg>

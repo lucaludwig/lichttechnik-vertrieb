@@ -80,6 +80,12 @@
     ]
   }
   </script>
+  <style>
+    /* ponytail: Hero-Bild vollständig zeigen statt 4/3-Crop */
+    .about-image.is-wide { aspect-ratio: auto; }
+    .about-image.is-wide img { object-fit: contain; height: auto; }
+    .about-image.is-wide::after { display: none; }
+  </style>
 </head>
 <body>
 
@@ -125,11 +131,16 @@
   <!-- Einleitung -->
   <section class="section-spacious">
     <div class="container">
-      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
-        <span class="section-label">Hintergrund</span>
+      <div class="about-split">
+        <div class="about-image is-wide fade-in">
+          <img src="../../images/lichtwissen-led-schalten.svg" alt="Illustration: LED ein (leuchtend) und aus (dunkel) — Schaltzyklen bestimmt der Treiber" width="900" height="532">
+        </div>
+        <div class="about-text fade-in">
+          <span class="section-label">Hintergrund</span>
         <h2>Schalten war schon immer ein Thema</h2>
         <p>Bei Treppenhäusern mit Treppenautomaten oder bei Bewegungsmeldern kennt man aus der Vergangenheit, dass Kompakt-Leuchtstofflampen (Sparlampen) relativ oft kaputt gegangen sind. Es gab damals spezielle Lampen mit der Zusatzbezeichnung „Facility", die wesentlich länger hielten — aber die Haltbarkeit beim Schalten war immer ein Thema.</p>
         <p><strong>Die gute Nachricht: LEDs selbst können fast unendlich oft geschaltet werden.</strong> Die Begrenzung liegt woanders — nämlich beim Betriebsgerät, dem sogenannten Treiber.</p>
+        </div>
       </div>
     </div>
   </section>
