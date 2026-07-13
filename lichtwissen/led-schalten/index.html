@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LEDs schalten: Warum Schaltzyklen begrenzt sind, welche Rolle der Treiber spielt und worauf Sie bei Bewegungsmeldern achten müssen — praxisnah vom Lichttechniker erklärt.">
+  <title>LEDs schalten: Schaltzyklen, Treiber und Haltbarkeit | Lichttechnik und Vertrieb</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="icon" type="image/png" href="../../images/logo.png">
+  <link rel="canonical" href="https://www.lichttechnik-vertrieb.de/lichtwissen/led-schalten/">
+  <meta property="og:title" content="LEDs schalten: Schaltzyklen, Treiber und Haltbarkeit | Lichttechnik und Vertrieb">
+  <meta property="og:description" content="Wie oft darf man LEDs ein- und ausschalten? Was Schaltzyklen bedeuten und warum der Treiber die Schwachstelle ist.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.lichttechnik-vertrieb.de/lichtwissen/led-schalten/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Lichttechnik und Vertrieb">
+  <meta property="article:published_time" content="2026-07-13">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDs schalten: Schaltzyklen, Treiber und Haltbarkeit",
+    "description": "LEDs schalten: Warum Schaltzyklen begrenzt sind, welche Rolle der Treiber spielt und worauf Sie bei Bewegungsmeldern achten müssen — praxisnah vom Lichttechniker erklärt.",
+    "datePublished": "2026-07-13",
+    "inLanguage": "de",
+    "author": {
+      "@type": "Person",
+      "name": "Rainer Ludwig",
+      "jobTitle": "DIN-zertifizierter Lichttechniker"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lichttechnik und Vertrieb",
+      "logo": { "@type": "ImageObject", "url": "https://www.lichttechnik-vertrieb.de/images/logo.png" }
+    },
+    "mainEntityOfPage": "https://www.lichttechnik-vertrieb.de/lichtwissen/led-schalten/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.lichttechnik-vertrieb.de/" },
+      { "@type": "ListItem", "position": 2, "name": "Lichtwissen", "item": "https://www.lichttechnik-vertrieb.de/lichtwissen/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDs schalten: Schaltzyklen, Treiber und Haltbarkeit" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie oft kann man eine LED ein- und ausschalten?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Die LED selbst kann fast unbegrenzt oft geschaltet werden. Die Begrenzung liegt beim Betriebsgerät (Treiber): Je nach Qualität verkraftet es zwischen 15.000 und 100.000 Schaltzyklen. Ein Schaltzyklus umfasst jeweils ein Ein- und ein Ausschalten." }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum gehen LED-Leuchten kaputt, obwohl LEDs so langlebig sind?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Wenn eine LED-Leuchte ausfällt, liegt es sehr häufig am Treiber — nicht an der LED selbst. Der Treiber lässt sich in der Regel einfach austauschen. Seltener ist eine Überhitzung der LED durch schlechte Wärmeableitung die Ursache." }
+      },
+      {
+        "@type": "Question",
+        "name": "Sind LEDs für Treppenhäuser und Bewegungsmelder geeignet?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, aber achten Sie auf Leuchten mit mindestens 50.000 Schaltzyklen. Günstige Modelle mit nur 15.000 Zyklen sind für häufiges Schalten nicht ausgelegt. Markengeräte im oberen Bereich sind hier die bessere Wahl." }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum haben LED-Treiber begrenzte Schaltzyklen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "LEDs haben einen extrem hohen Einschaltstrom, der zwar nur etwa 5 Millisekunden dauert, aber die Bauteile im Treiber — besonders die Kondensatoren — thermisch und mechanisch belastet. Über tausende Schaltungen summiert sich diese Belastung." }
+      },
+      {
+        "@type": "Question",
+        "name": "Woran erkenne ich, wie viele Schaltzyklen eine LED aushält?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oft fehlt diese Angabe auf der Verpackung. Eine europäische Ökodesign-Richtlinie schreibt vor: LED-Leuchtmittel mit über 30.000 Stunden Lebensdauer müssen mindestens die Hälfte dieser Stundenzahl als Schaltzyklen überstehen — also mindestens 15.000. Der tatsächliche Wert liegt meist darüber." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../../index.html" class="nav-logo">
+        <img src="../../images/logo.png" alt="Lichttechnik und Vertrieb Logo" width="757" height="534">
+        <span>Lichttechnik &amp; Vertrieb</span>
+      </a>
+      <button class="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Startseite</a></li>
+        <li><a href="../../uber-uns.html">Unternehmen</a></li>
+        <li><a href="../../produkte.html">Produkte</a></li>
+        <li><a href="../../angebote.html">Angebote</a></li>
+        <li><a href="../../beleuchtungsplanung.html">3D-Planung</a></li>
+        <li><a href="../">Lichtwissen</a></li>
+        <li><a href="../../kontakt.html" class="nav-cta">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Startseite</a>
+        <span>/</span>
+        <a href="../">Lichtwissen</a>
+        <span>/</span>
+        <span style="color: rgba(255,255,255,0.9);">LEDs schalten</span>
+      </div>
+      <h1>LEDs schalten: Schaltzyklen, Treiber und Haltbarkeit</h1>
+      <p>Wie oft darf man LEDs ein- und ausschalten? Was Treppenhaus-Automaten und Bewegungsmelder für die Haltbarkeit bedeuten — und warum meist nicht die LED, sondern der Treiber das Problem ist.</p>
+    </div>
+  </section>
+
+  <!-- Einleitung -->
+  <section class="section-spacious">
+    <div class="container">
+      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
+        <span class="section-label">Hintergrund</span>
+        <h2>Schalten war schon immer ein Thema</h2>
+        <p>Bei Treppenhäusern mit Treppenautomaten oder bei Bewegungsmeldern kennt man aus der Vergangenheit, dass Kompakt-Leuchtstofflampen (Sparlampen) relativ oft kaputt gegangen sind. Es gab damals spezielle Lampen mit der Zusatzbezeichnung „Facility", die wesentlich länger hielten — aber die Haltbarkeit beim Schalten war immer ein Thema.</p>
+        <p><strong>Die gute Nachricht: LEDs selbst können fast unendlich oft geschaltet werden.</strong> Die Begrenzung liegt woanders — nämlich beim Betriebsgerät, dem sogenannten Treiber.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schaltzyklen -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Die Kernfrage</span>
+        <h2>Wie viele Schaltzyklen verkraftet ein LED-Treiber?</h2>
+        <p>Je nach Qualität des Betriebsgeräts sind zwischen 15.000 und 100.000 Schaltzyklen möglich. Ein Schaltzyklus umfasst jeweils ein Einschalten und ein Ausschalten.</p>
+      </div>
+
+      <div class="umruestung-wege fade-in">
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Günstige Einstiegsgeräte</h3>
+              <p>Im unteren Bereich — etwa <strong>15.000 Schaltzyklen</strong> — sind fast immer günstige Einstiegsgeräte angesiedelt. Für den normalen Hausgebrauch mit etwa drei Schaltungen pro Tag reicht das für eine Haltbarkeit von rund <strong>13 Jahren</strong>.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Markengeräte</h3>
+              <p>Den oberen Bereich — <strong>50.000 bis 100.000 Schaltzyklen</strong> — machen meist die Markengeräte aus. Diese sind die richtige Wahl für Bereiche mit häufigem Schalten, etwa Treppenhäuser, Eingangsbereiche oder Räume mit Bewegungsmeldern.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warum begrenzt? -->
+  <section class="section-spacious">
+    <div class="container">
+      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
+        <span class="section-label">Technik dahinter</span>
+        <h2>Warum sind die Schaltungen begrenzt?</h2>
+        <p>Der Grund liegt beim <strong>extrem hohen Einschaltstrom</strong> der LEDs. Dieser tritt zwar nur etwa 5 Millisekunden auf, belastet aber die Bauteile im Treiber — besonders die Kondensatoren — thermisch und mechanisch.</p>
+        <p>Über tausende Schaltungen summiert sich diese Belastung, bis Bauteile ermüden und der Treiber ausfällt. Die LED selbst übersteht das problemlos — es ist die Elektronik, die nachgibt.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Praxis -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Praxis-Check</span>
+        <h2>Worauf muss ich beim Einsatz achten?</h2>
+      </div>
+
+      <div class="umruestung-wege fade-in">
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">A</div>
+            <div>
+              <h3>Normaler Hausgebrauch</h3>
+              <p>Bei etwa drei Schaltungen pro Tag kommt man auf rund 1.000 Zyklen im Jahr. Selbst ein günstiger Treiber mit 15.000 Schaltzyklen hält damit <strong>über 13 Jahre</strong> — länger als die meisten Leuchten in Betrieb sind.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">B</div>
+            <div>
+              <h3>Treppenhaus und Bewegungsmelder</h3>
+              <p>In einem Treppenhaus oder Eingangsbereich mit Bewegungsmeldern oder Treppenhausautomaten sieht das ganz anders aus. Hier wird deutlich häufiger geschaltet — <strong>achten Sie auf mindestens 50.000 Schaltzyklen</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EU-Richtlinie -->
+  <section class="section-spacious">
+    <div class="container">
+      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
+        <span class="section-label">Orientierungshilfe</span>
+        <h2>Was, wenn keine Angabe auf der Verpackung steht?</h2>
+        <p>Oft gibt es keine Angaben zur Schaltfestigkeit eines Leuchtmittels oder einer Leuchte. Hier hilft eine europäische Ökodesign-Richtlinie:</p>
+        <p><strong>LED-Leuchtmittel mit einer Lebensdauer von über 30.000 Stunden müssen mindestens 15.000 Schaltzyklen schadlos überstehen</strong> — also die Hälfte der angegebenen Stunden der mittleren Lebensdauer. Der tatsächliche Wert liegt meist darüber.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fazit -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
+        <span class="section-label">Fazit</span>
+        <h2>Wenn eine LED kaputt geht — liegt es meist am Treiber</h2>
+        <p>Aus all dem lässt sich ableiten: Wenn eine LED-Leuchte ausfällt, liegt es <strong>sehr häufig am Treiber</strong>, den man in der Regel einfach austauschen kann.</p>
+        <p>Seltener ist eine Überhitzung der LED selbst die Ursache — meist bedingt durch eine schlechte Wärmeableitung im Leuchtengehäuse.</p>
+        <p>Es lohnt sich also, beim Kauf auf die <strong>Qualität des Betriebsgeräts</strong> zu achten — besonders dort, wo häufig geschaltet wird.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kennzahlen -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-strip-items fade-in">
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="15000">0</div>
+          <div class="stats-strip-label">Mindest-Schaltzyklen laut EU-Richtlinie</div>
+        </div>
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="100000">0</div>
+          <div class="stats-strip-label">Schaltzyklen bei hochwertigen Treibern</div>
+        </div>
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="5">0</div>
+          <div class="stats-strip-label">Millisekunden Einschaltstrom-Spitze</div>
+        </div>
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="13">0</div>
+          <div class="stats-strip-label">Jahre Haltbarkeit bei 3 Schaltungen/Tag</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Häufige Fragen</span>
+        <h2>LED-Schalten kompakt</h2>
+      </div>
+      <div class="faq-list fade-in">
+        <details class="faq-item">
+          <summary>Wie oft kann man eine LED ein- und ausschalten?</summary>
+          <p>Die LED selbst kann fast unbegrenzt oft geschaltet werden. Die Begrenzung liegt beim Betriebsgerät (Treiber): Je nach Qualität verkraftet es zwischen 15.000 und 100.000 Schaltzyklen. Ein Schaltzyklus umfasst jeweils ein Ein- und ein Ausschalten.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Warum gehen LED-Leuchten kaputt, obwohl LEDs so langlebig sind?</summary>
+          <p>Wenn eine LED-Leuchte ausfällt, liegt es sehr häufig am Treiber — nicht an der LED selbst. Der Treiber lässt sich in der Regel einfach austauschen. Seltener ist eine Überhitzung der LED durch schlechte Wärmeableitung die Ursache.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Sind LEDs für Treppenhäuser und Bewegungsmelder geeignet?</summary>
+          <p>Ja, aber achten Sie auf Leuchten mit mindestens 50.000 Schaltzyklen. Günstige Modelle mit nur 15.000 Zyklen sind für häufiges Schalten nicht ausgelegt. Markengeräte im oberen Bereich sind hier die bessere Wahl.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Warum haben LED-Treiber begrenzte Schaltzyklen?</summary>
+          <p>LEDs haben einen extrem hohen Einschaltstrom, der zwar nur etwa 5 Millisekunden dauert, aber die Bauteile im Treiber — besonders die Kondensatoren — thermisch und mechanisch belastet. Über tausende Schaltungen summiert sich diese Belastung.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Woran erkenne ich, wie viele Schaltzyklen eine LED aushält?</summary>
+          <p>Oft fehlt diese Angabe auf der Verpackung. Eine europäische Ökodesign-Richtlinie schreibt vor: LED-Leuchtmittel mit über 30.000 Stunden Lebensdauer müssen mindestens die Hälfte dieser Stundenzahl als Schaltzyklen überstehen — also mindestens 15.000. Der tatsächliche Wert liegt meist darüber.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container fade-in">
+      <h2>Die richtige LED für jeden Einsatz</h2>
+      <p>Ob Wohnzimmer, Treppenhaus oder Außenbereich — die Wahl des richtigen Betriebsgeräts entscheidet über Haltbarkeit und Zuverlässigkeit. Ich berate Sie gerne, welche Lösung für Ihren Einsatzbereich die richtige ist.</p>
+      <ul class="cta-checks">
+        <li>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Schaltfeste Treiber für Treppenhäuser und Bewegungsmelder
+        </li>
+        <li>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Markengeräte mit bis zu 100.000 Schaltzyklen
+        </li>
+        <li>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Herstellerunabhängige Beratung
+        </li>
+      </ul>
+      <a href="../../kontakt.html?produkt=LED-Schalten" class="btn btn-primary">
+        Jetzt Beratung anfordern
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="../../images/logo.png" alt="Logo" width="757" height="534">
+            <span>Lichttechnik &amp; Vertrieb</span>
+          </div>
+          <p>Ihr Partner für professionelle Beleuchtungslösungen. Beratung, Planung und Vertrieb seit 38 Jahren.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Startseite</a></li>
+            <li><a href="../../uber-uns.html">Unternehmen</a></li>
+            <li><a href="../../produkte.html">Produkte</a></li>
+            <li><a href="../../angebote.html">Angebote</a></li>
+            <li><a href="../../beleuchtungsplanung.html">3D-Planung</a></li>
+            <li><a href="../">Lichtwissen</a></li>
+            <li><a href="../../kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="../../impressum.html">Impressum</a></li>
+            <li><a href="../../datenschutz.html">Datenschutz</a></li>
+            <li><a href="../../agb.html">AGB</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+4961046683115">+49 6104-6683115</a></li>
+            <li><a href="mailto:info@lichttechnik-vertrieb.de">info@lichttechnik-vertrieb.de</a></li>
+            <li>Friedenstr. 3 b</li>
+            <li>63150 Heusenstamm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Rainer Ludwig. Alle Rechte vorbehalten.
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/4961046683115?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung." class="whatsapp-float has-sticky-cta" target="_blank" rel="noopener" aria-label="WhatsApp Kontakt">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Sticky Mobile CTA -->
+  <a href="../../kontakt.html" class="sticky-cta">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    Jetzt beraten lassen
+  </a>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>
