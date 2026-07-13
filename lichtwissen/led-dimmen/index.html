@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LEDs richtig dimmen: Analog vs. PWM, typische Probleme mit alten Dimmern, Mindestlast, Flackern und Dim-to-Warm — praxisnah vom Lichttechniker erklärt.">
+  <title>LED dimmen: So funktioniert es richtig | Lichttechnik und Vertrieb</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="icon" type="image/png" href="../../images/logo.png">
+  <link rel="canonical" href="https://www.lichttechnik-vertrieb.de/lichtwissen/led-dimmen/">
+  <meta property="og:title" content="LED dimmen: So funktioniert es richtig | Lichttechnik und Vertrieb">
+  <meta property="og:description" content="Analog oder PWM? Warum LEDs flackern und wie man es vermeidet — verständlich erklärt.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.lichttechnik-vertrieb.de/lichtwissen/led-dimmen/">
+  <meta property="og:image" content="https://www.lichttechnik-vertrieb.de/images/lichtwissen-led-dimmen.jpg">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Lichttechnik und Vertrieb">
+  <meta property="article:published_time" content="2026-07-13">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LED dimmen: So funktioniert es richtig",
+    "description": "LEDs richtig dimmen: Analog vs. PWM, typische Probleme mit alten Dimmern, Mindestlast, Flackern und Dim-to-Warm — praxisnah vom Lichttechniker erklärt.",
+    "image": "https://www.lichttechnik-vertrieb.de/images/lichtwissen-led-dimmen.jpg",
+    "datePublished": "2026-07-13",
+    "inLanguage": "de",
+    "author": {
+      "@type": "Person",
+      "name": "Rainer Ludwig",
+      "jobTitle": "DIN-zertifizierter Lichttechniker"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lichttechnik und Vertrieb",
+      "logo": { "@type": "ImageObject", "url": "https://www.lichttechnik-vertrieb.de/images/logo.png" }
+    },
+    "mainEntityOfPage": "https://www.lichttechnik-vertrieb.de/lichtwissen/led-dimmen/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.lichttechnik-vertrieb.de/" },
+      { "@type": "ListItem", "position": 2, "name": "Lichtwissen", "item": "https://www.lichttechnik-vertrieb.de/lichtwissen/" },
+      { "@type": "ListItem", "position": 3, "name": "LED dimmen: So funktioniert es richtig" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kann man LEDs dimmen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, LEDs lassen sich dimmen — vorausgesetzt, die LED ist als „dimmbar" gekennzeichnet und das Betriebsgerät ist dafür ausgelegt. Normale Standard-LEDs dürfen nicht an einen Dimmer angeschlossen werden, da sie sonst beschädigt werden können." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der Unterschied zwischen analogem und digitalem Dimmen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Beim analogen Dimmen wird die Stromstärke reduziert — weniger Strom bedeutet weniger Licht, allerdings kann sich die Lichtfarbe verändern. Beim digitalen Dimmen (PWM) wird die LED hundert- oder tausendmal pro Sekunde ein- und ausgeschaltet. Die Lichtfarbe bleibt perfekt, aber billige Elektronik kann Flackern verursachen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum flackert meine LED beim Dimmen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Häufigste Ursache: Ein alter Glühbirnen-Dimmer mit zu hoher Mindestlast. Moderne LEDs verbrauchen oft nur 5–10 Watt, der Dimmer braucht aber 20+ Watt Mindestlast. Die Lösung ist ein LED-kompatibler Dimmer oder ein DALI-System." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was bedeutet Dim-to-Warm?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dim-to-Warm-LEDs simulieren das Verhalten einer Glühlampe: Bei abnehmender Helligkeit wird das Licht automatisch wärmer und orangefarbener. Verschiedene weiße und warmtonige LEDs werden kombiniert und beim Dimmen unterschiedlich angesteuert. Besonders empfehlenswert für Wohnbereiche." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist DALI und warum löst es Dimm-Probleme?",
+        "acceptedAnswer": { "@type": "Answer", "text": "DALI (Digital Addressable Lighting Interface) ist ein digitales Steuerprotokoll. Jedes Betriebsgerät erhält denselben digitalen Befehl und reagiert exakt gleich — so werden Helligkeitsunterschiede zwischen Leuchten am selben Dimmer vermieden." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* ponytail: Vergleichstabelle nur für diesen Artikel */
+    .dimm-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.95rem; }
+    .dimm-table th, .dimm-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+    .dimm-table th { background: #f9fafb; color: #374151; font-weight: 600; }
+    .dimm-table tr:last-child td { border-bottom: none; }
+    @media (max-width: 640px) { .dimm-table { font-size: 0.85rem; } .dimm-table th, .dimm-table td { padding: 0.5rem; } }
+    .about-image.is-square { aspect-ratio: 1/1; }
+    .about-image.is-square::after { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../../index.html" class="nav-logo">
+        <img src="../../images/logo.png" alt="Lichttechnik und Vertrieb Logo" width="757" height="534">
+        <span>Lichttechnik &amp; Vertrieb</span>
+      </a>
+      <button class="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Startseite</a></li>
+        <li><a href="../../uber-uns.html">Unternehmen</a></li>
+        <li><a href="../../produkte.html">Produkte</a></li>
+        <li><a href="../../angebote.html">Angebote</a></li>
+        <li><a href="../../beleuchtungsplanung.html">3D-Planung</a></li>
+        <li><a href="../">Lichtwissen</a></li>
+        <li><a href="../../kontakt.html" class="nav-cta">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Startseite</a>
+        <span>/</span>
+        <a href="../">Lichtwissen</a>
+        <span>/</span>
+        <span style="color: rgba(255,255,255,0.9);">LED dimmen</span>
+      </div>
+      <h1>LED dimmen: So funktioniert es richtig</h1>
+      <p>Analog oder digital, PWM oder DALI, Flackern oder flimmerfrei — was beim Dimmen von LEDs wirklich zählt, verständlich und praxisnah erklärt.</p>
+    </div>
+  </section>
+
+  <!-- Einleitung -->
+  <section class="section-spacious">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-image is-square fade-in">
+          <img src="../../images/lichtwissen-led-dimmen.jpg" alt="Gedimmte LED-Beleuchtung in einem Wohnraum" width="900" height="900">
+        </div>
+        <div class="about-text fade-in">
+          <span class="section-label">Grundlagen des Dimmens</span>
+          <h2>Ja, LEDs lassen sich dimmen — aber anders</h2>
+          <p><strong>LEDs kann man absolut dimmen.</strong> Allerdings funktioniert das nicht so einfach wie bei einer alten Glühbirne. Wenn man eine LED einfach nur an eine geringere Spannung anschließt, fängt sie irgendwann an zu flackern oder geht schlagartig aus.</p>
+          <p>Die LED benötigt ein Betriebsgerät, das sie mit der benötigten Spannung oder dem benötigten Strom versorgt. <strong>Die Qualität dieses Betriebsgerätes ist die Voraussetzung</strong> für einen ordentlichen Betrieb der LED und ein gutes Dimmergebnis.</p>
+          <p>Bei Retrofits — Nachbildungen herkömmlicher Leuchtmittel in der gleichen Form und Größe — gibt es oft das Problem des geringen Platzes für ein gutes Betriebsgerät. Es werden Kompromisse geschlossen, die dann im Betrieb, besonders beim Dimmen, mit Flackern oder Brummen negativ auffallen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analog vs. Digital -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Die zwei Hauptwege</span>
+        <h2>Analog vs. Digital</h2>
+        <p>Es gibt zwei grundsätzliche Verfahren, LEDs zu dimmen. Beide haben klare Stärken und Schwächen.</p>
+      </div>
+
+      <div class="umruestung-wege fade-in">
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Analoges Dimmen (Amplituden-Dimmverfahren)</h3>
+              <p>Beim analogen Dimmen wird die Stromstärke reduziert, die durch die LED fließt. Weniger Strom bedeutet weniger Licht — wie ein Wasserhahn, den man zudreht.</p>
+            </div>
+          </div>
+          <ul class="umruestung-weg-details">
+            <li><strong>Vorteil:</strong> Elektronisch sehr einfach, absolut kein Flackern.</li>
+            <li><strong>Problem:</strong> LEDs verändern ihre Lichtfarbe bei niedrigem Strom — warmweißes Licht kann grünlich oder bläulich wirken. Im unteren Bereich arbeiten LEDs oft ungenau oder gehen einfach aus.</li>
+            <li><strong>Einsatzbereich:</strong> Taschenlampen, einfache LED-Streifen.</li>
+          </ul>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Digitales Dimmen (Pulsweitenmodulation / PWM)</h3>
+              <p>Die modernste und am häufigsten genutzte Methode. Die LED wird nicht schwächer gemacht, sondern <strong>rasend schnell ein- und ausgeschaltet</strong> — viele hundert- oder tausendmal pro Sekunde.</p>
+            </div>
+          </div>
+          <ul class="umruestung-weg-details">
+            <li><strong>So funktioniert es:</strong> Bleibt die LED pro Sekunde die Hälfte der Zeit an und die Hälfte aus, denkt unser Auge, sie leuchte mit halber Kraft. Je länger die An-Phase, desto heller wirkt das Licht.</li>
+            <li><strong>Vorteil:</strong> Die LED behält immer ihre perfekte Lichtfarbe, weil sie (wenn sie an ist) immer mit optimaler Strommenge versorgt wird.</li>
+            <li><strong>Problem:</strong> Billige Elektronik mit weniger als 200 Schaltvorgängen pro Sekunde verursacht störendes Flackern — Kopfschmerzen und Streifen auf Smartphone-Videos sind die Folge.</li>
+            <li><strong>Einsatzbereich:</strong> Smart Home (Philips Hue etc.), Displays, hochwertige Leuchten.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typische Probleme -->
+  <section class="section-spacious">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Praxis-Check</span>
+        <h2>Typische Probleme beim LED-Dimmen</h2>
+        <p>Wenn Sie zu Hause LEDs dimmen wollen, stoßen Sie oft auf diese Hürden:</p>
+      </div>
+
+      <div class="umruestung-wege fade-in">
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">!</div>
+            <div>
+              <h3>Das Mindestlast-Problem</h3>
+              <p>Alte Dimmer für Glühbirnen brauchen oft 20+ Watt Mindestleistung. Eine moderne LED verbraucht nur 5 Watt — der Dimmer „denkt", es sei keine Lampe angeschlossen. Die Folge: wildes Flackern oder gar kein Licht.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">!</div>
+            <div>
+              <h3>Der tote Weg (Dead Travel)</h3>
+              <p>Sie drehen am Dimmer, aber auf den ersten Zentimetern passiert nichts. Erst ganz am Ende wird das Licht plötzlich hell.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">!</div>
+            <div>
+              <h3>Glimmen im Aus-Zustand</h3>
+              <p>Die LED leuchtet schwach, obwohl der Schalter auf „Aus" steht. Ursache: minimale Kriechströme in den Leitungen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">!</div>
+            <div>
+              <h3>Summen und Brummen</h3>
+              <p>Billige LED-Treiber erzeugen beim Dimmen ein nerviges, hochfrequentes Summen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">!</div>
+            <div>
+              <h3>Unterschiedliche Helligkeit</h3>
+              <p>Mehrere Leuchten am selben Dimmer erscheinen unterschiedlich hell. Ursache: Abweichungen der einzelnen Betriebsgeräte. <strong>Lösung: DALI-Betriebsgeräte</strong> — sie erhalten alle den gleichen digitalen Befehl und reagieren absolut gleich.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vergleichstabelle -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Zusammenfassung</span>
+        <h2>Was passt zusammen?</h2>
+      </div>
+      <div class="fade-in" style="overflow-x: auto;">
+        <table class="dimm-table">
+          <thead>
+            <tr>
+              <th>Eigenschaft</th>
+              <th>Analoges Dimmen</th>
+              <th>Digitales Dimmen (PWM)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Wie wird gedimmt?</strong></td>
+              <td>Stromstärke wird verringert</td>
+              <td>LED wird extrem schnell an-/ausgeschaltet</td>
+            </tr>
+            <tr>
+              <td><strong>Lichtqualität</strong></td>
+              <td>Farbe kann sich leicht verändern</td>
+              <td>Lichtfarbe bleibt immer perfekt</td>
+            </tr>
+            <tr>
+              <td><strong>Risiko</strong></td>
+              <td>LED geht im unteren Bereich einfach aus</td>
+              <td>Kann bei billiger Technik flackern (Stroboskop-Effekt)</td>
+            </tr>
+            <tr>
+              <td><strong>Einsatzbereich</strong></td>
+              <td>Taschenlampen, einfache LED-Streifen</td>
+              <td>Smart Home, Displays, hochwertige Leuchten</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dimmbar-Hinweis -->
+  <section class="section-spacious">
+    <div class="container">
+      <div class="about-split about-split-reversed">
+        <div class="about-image is-square fade-in">
+          <img src="../../images/lichtwissen-dimmbar-symbol.png" alt="Symbol für dimmbare LEDs auf der Verpackung" loading="lazy" width="400" height="400">
+        </div>
+        <div class="about-text fade-in">
+          <span class="section-label">Wichtig für den Alltag</span>
+          <h2>Immer auf „dimmbar" achten</h2>
+          <p>Wenn Sie eine LED-Birne kaufen, achten Sie auf der Verpackung zwingend auf das Symbol oder den Hinweis <strong>„dimmbar" (dimmable)</strong>.</p>
+          <p><strong>Normale Standard-LEDs dürfen niemals an einen Dimmer angeschlossen werden</strong> — sie können sonst beschädigt werden oder kaputtgehen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dim-to-Warm -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Besonderheit</span>
+        <h2>Dim-to-Warm: Glühlampen-Feeling mit LED</h2>
+      </div>
+      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
+        <p>Viele schätzen das schöne Dimm-Verhalten der alten Glühlampe, bei dem das Licht mit abnehmender Helligkeit immer wärmer und orangefarbener wurde.</p>
+        <p>Dieser angenehme Effekt kann jetzt auch mit speziellen LEDs nachempfunden werden: Es werden LEDs mit verschiedenen Farben von Weiß- bis Warmlicht nebeneinander angeordnet und so beim Dimmen geregelt, dass das weiße Licht abnimmt und das warme Licht zunimmt. Diese LEDs nennt man <strong>„Dim-to-Warm"</strong>.</p>
+        <p>Die Steuertechnik ist im Betriebsgerät verbaut. Besonders für den Wohnbereich ist diese Technik empfehlenswert — in Glühlampenform und auf LED-Bändern verfügbar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kennzahlen -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-strip-items fade-in">
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="200">0</div>
+          <div class="stats-strip-label">Hz Mindestfrequenz für flimmerfreies PWM</div>
+        </div>
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="20">0</div>
+          <div class="stats-strip-label">Watt Mindestlast vieler alter Dimmer</div>
+        </div>
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="5">0</div>
+          <div class="stats-strip-label">Watt typische LED — zu wenig für alte Dimmer</div>
+        </div>
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="100">0</div>
+          <div class="stats-strip-label">Prozent gleichmäßig dank DALI-Steuerung</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Häufige Fragen</span>
+        <h2>LED-Dimmen kompakt</h2>
+      </div>
+      <div class="faq-list fade-in">
+        <details class="faq-item">
+          <summary>Kann man LEDs dimmen?</summary>
+          <p>Ja, LEDs lassen sich dimmen — vorausgesetzt, die LED ist als „dimmbar" gekennzeichnet und das Betriebsgerät ist dafür ausgelegt. Normale Standard-LEDs dürfen nicht an einen Dimmer angeschlossen werden, da sie sonst beschädigt werden können.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Was ist der Unterschied zwischen analogem und digitalem Dimmen?</summary>
+          <p>Beim analogen Dimmen wird die Stromstärke reduziert — weniger Strom bedeutet weniger Licht, allerdings kann sich die Lichtfarbe verändern. Beim digitalen Dimmen (PWM) wird die LED hundert- oder tausendmal pro Sekunde ein- und ausgeschaltet. Die Lichtfarbe bleibt perfekt, aber billige Elektronik kann Flackern verursachen.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Warum flackert meine LED beim Dimmen?</summary>
+          <p>Häufigste Ursache: Ein alter Glühbirnen-Dimmer mit zu hoher Mindestlast. Moderne LEDs verbrauchen oft nur 5–10 Watt, der Dimmer braucht aber 20+ Watt Mindestlast. Die Lösung ist ein LED-kompatibler Dimmer oder ein DALI-System.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Was bedeutet Dim-to-Warm?</summary>
+          <p>Dim-to-Warm-LEDs simulieren das Verhalten einer Glühlampe: Bei abnehmender Helligkeit wird das Licht automatisch wärmer und orangefarbener. Verschiedene weiße und warmtonige LEDs werden kombiniert und beim Dimmen unterschiedlich angesteuert. Besonders empfehlenswert für Wohnbereiche.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Was ist DALI und warum löst es Dimm-Probleme?</summary>
+          <p>DALI (Digital Addressable Lighting Interface) ist ein digitales Steuerprotokoll. Jedes Betriebsgerät erhält denselben digitalen Befehl und reagiert exakt gleich — so werden Helligkeitsunterschiede zwischen Leuchten am selben Dimmer vermieden.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container fade-in">
+      <h2>LED-Dimmen ohne Kompromisse</h2>
+      <p>Die Wahl des richtigen Dimmers und Betriebsgeräts ist entscheidend für flimmerfreien, gleichmäßigen Lichtkomfort. Ich helfe Ihnen, die passende Lösung für Ihre Räume zu finden — ob nachrüstbarer Dimmer, DALI-System oder Dim-to-Warm.</p>
+      <ul class="cta-checks">
+        <li>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Dimmer-Kompatibilität geprüft und sichergestellt
+        </li>
+        <li>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Flimmerfreie, hochwertige Betriebsgeräte
+        </li>
+        <li>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Dim-to-Warm für natürliches Glühlampen-Feeling
+        </li>
+      </ul>
+      <a href="../../kontakt.html?produkt=LED-Dimmen" class="btn btn-primary">
+        Jetzt Beratung anfordern
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="../../images/logo.png" alt="Logo" width="757" height="534">
+            <span>Lichttechnik &amp; Vertrieb</span>
+          </div>
+          <p>Ihr Partner für professionelle Beleuchtungslösungen. Beratung, Planung und Vertrieb seit 38 Jahren.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Startseite</a></li>
+            <li><a href="../../uber-uns.html">Unternehmen</a></li>
+            <li><a href="../../produkte.html">Produkte</a></li>
+            <li><a href="../../angebote.html">Angebote</a></li>
+            <li><a href="../../beleuchtungsplanung.html">3D-Planung</a></li>
+            <li><a href="../">Lichtwissen</a></li>
+            <li><a href="../../kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="../../impressum.html">Impressum</a></li>
+            <li><a href="../../datenschutz.html">Datenschutz</a></li>
+            <li><a href="../../agb.html">AGB</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+4961046683115">+49 6104-6683115</a></li>
+            <li><a href="mailto:info@lichttechnik-vertrieb.de">info@lichttechnik-vertrieb.de</a></li>
+            <li>Friedenstr. 3 b</li>
+            <li>63150 Heusenstamm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Rainer Ludwig. Alle Rechte vorbehalten.
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/4961046683115?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung." class="whatsapp-float has-sticky-cta" target="_blank" rel="noopener" aria-label="WhatsApp Kontakt">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Sticky Mobile CTA -->
+  <a href="../../kontakt.html" class="sticky-cta">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    Jetzt beraten lassen
+  </a>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>
