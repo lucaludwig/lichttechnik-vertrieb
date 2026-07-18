@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Woran erkennt man einen hochwertigen LED-Treiber? Leistungsfaktor, Wärmeableitung, Flackern, Prüfzeichen und warum Retrofits oft Kompromisse eingehen — praxisnah erklärt.">
+  <title>Qualitativ hochwertiger LED-Treiber: Darauf kommt es an | Lichttechnik und Vertrieb</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="icon" type="image/png" href="../../images/logo.png">
+  <link rel="canonical" href="https://www.lichttechnik-vertrieb.de/lichtwissen/led-treiber/">
+  <meta property="og:title" content="Qualitativ hochwertiger LED-Treiber: Darauf kommt es an | Lichttechnik und Vertrieb">
+  <meta property="og:description" content="Leistungsfaktor, Wärmeableitung, Flackern und Prüfzeichen — woran Sie einen guten LED-Treiber erkennen.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.lichttechnik-vertrieb.de/lichtwissen/led-treiber/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://www.lichttechnik-vertrieb.de/images/lichtwissen-led-treiber.svg">
+  <meta property="og:site_name" content="Lichttechnik und Vertrieb">
+  <meta property="article:published_time" content="2026-07-18">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Woran erkennt man einen qualitativ hochwertigen Treiber für LEDs?",
+    "description": "Leistungsfaktor, Wärmeableitung, Flackern und Prüfzeichen — woran Sie einen guten LED-Treiber erkennen.",
+    "image": "https://www.lichttechnik-vertrieb.de/images/lichtwissen-led-treiber.svg",
+    "datePublished": "2026-07-18",
+    "inLanguage": "de",
+    "author": {
+      "@type": "Person",
+      "name": "Rainer Ludwig",
+      "jobTitle": "DIN-zertifizierter Lichttechniker"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lichttechnik und Vertrieb",
+      "logo": { "@type": "ImageObject", "url": "https://www.lichttechnik-vertrieb.de/images/logo.png" }
+    },
+    "mainEntityOfPage": "https://www.lichttechnik-vertrieb.de/lichtwissen/led-treiber/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.lichttechnik-vertrieb.de/" },
+      { "@type": "ListItem", "position": 2, "name": "Lichtwissen", "item": "https://www.lichttechnik-vertrieb.de/lichtwissen/" },
+      { "@type": "ListItem", "position": 3, "name": "Qualitativ hochwertiger LED-Treiber" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist ein LED-Treiber?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ein LED-Treiber ist ein Vorschaltgerät, das die Netzspannung in die richtige Betriebsspannung (Konstantspannung in Volt) oder den richtigen Betriebsstrom (Konstantstrom in Ampere) für die LED umwandelt. Ohne Treiber kann eine LED nicht betrieben werden." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was bedeutet der Leistungsfaktor (Power Factor) bei einem LED-Treiber?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Der Leistungsfaktor gibt an, wie viel Strom tatsächlich durch die Leitung fließt, bezogen auf die angegebene Wattzahl. Bei einem schlechten Leistungsfaktor (PF = 0,50) fließt bei gleicher Helligkeit der doppelte Strom — die Sicherung wird stärker belastet und es können nur halb so viele Leuchten angeschlossen werden. Ein guter Wert liegt bei PF ≥ 0,95." }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum flackern manche LEDs?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Flackern entsteht durch unzureichende Glättung des Stroms bei der Umwandlung von Wechsel- zu Gleichstrom im Treiber. Hochwertige Treiber verwenden langlebige Elektrolytkondensatoren, die den Strom sauber glätten und Flackern verhindern." }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum sind LED-Retrofits oft problematisch?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In Retrofits — also LED-Nachbildungen von Halogen- oder Leuchtstofflampen — ist durch die vorgegebene Baugröße nur wenig Platz für ein hochwertiges Vorschaltgerät. Es können nur die nötigsten Bauteile verbaut werden, was zu schlechten Wirkungsgraden, Flackern und geringer Lebensdauer führt. Oft ist eine neue Leuchte mit einem vernünftigen Treiber die bessere Wahl." }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Prüfzeichen sollte ein LED-Treiber haben?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Das CE-Zeichen ist Pflicht. Zusätzliche Sicherheit bieten ein TÜV- oder ENEC-Zeichen, die bestätigen, dass die Geräte unabhängig geprüft wurden. Achten Sie außerdem auf Angaben zu Kurzschluss-, Überlastungs- und Übertemperaturschutz." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* ponytail: PF-Vergleich nur für diesen Artikel */
+    .pf-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    .pf-box { padding: 1.25rem 1.5rem; border-radius: 10px; }
+    .pf-box.good { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .pf-box.bad { background: #fef2f2; border: 1px solid #fecaca; }
+    .pf-box h4 { margin: 0 0 0.5rem; font-size: 1rem; }
+    .pf-box p { margin: 0; font-size: 0.95rem; color: #374151; }
+    @media (max-width: 640px) { .pf-compare { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../../index.html" class="nav-logo">
+        <img src="../../images/logo.png" alt="Lichttechnik und Vertrieb Logo" width="757" height="534">
+        <span>Lichttechnik &amp; Vertrieb</span>
+      </a>
+      <button class="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Startseite</a></li>
+        <li><a href="../../uber-uns.html">Unternehmen</a></li>
+        <li><a href="../../produkte.html">Produkte</a></li>
+        <li><a href="../../angebote.html">Angebote</a></li>
+        <li><a href="../../beleuchtungsplanung.html">3D-Planung</a></li>
+        <li><a href="../">Lichtwissen</a></li>
+        <li><a href="../../kontakt.html" class="nav-cta">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Startseite</a>
+        <span>/</span>
+        <a href="../">Lichtwissen</a>
+        <span>/</span>
+        <span style="color: rgba(255,255,255,0.9);">LED-Treiber</span>
+      </div>
+      <h1>Woran erkennt man einen qualitativ hochwertigen Treiber für LEDs?</h1>
+      <p>Leistungsfaktor, Wärmeableitung, Flackern und Prüfzeichen — worauf es beim Herzstück jeder LED-Leuchte wirklich ankommt.</p>
+    </div>
+  </section>
+
+  <!-- Einleitung -->
+  <section class="section-spacious">
+    <div class="container">
+      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
+        <span class="section-label">Grundlagen</span>
+        <h2>Jede LED braucht einen Treiber</h2>
+        <p>Jede LED benötigt ein Vorschaltgerät, das man <strong>Treiber</strong> nennt. Er regelt die Spannung für Konstantspannung-LEDs (in Volt) oder den Strom für Konstantstrom-LEDs (in Ampere), den die LED zum Betrieb benötigt.</p>
+        <p><strong>Konstante Spannung</strong> benötigen zum Beispiel LED-Streifen mit 12V oder 24V. <strong>Konstanten Strom</strong> dagegen Einzel-LEDs in Downlights, Strahlern und ähnlichen Leuchten.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qualitätsmerkmale -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Die fünf Merkmale</span>
+        <h2>Was einen guten Treiber ausmacht</h2>
+        <p>Bei den Treibern kommt es auf fünf entscheidende Eigenschaften an:</p>
+      </div>
+
+      <div class="umruestung-wege fade-in">
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Wärmeableitung</h3>
+              <p>Das Gehäuse muss die entstehende Wärme gut ableiten. Staut sich die Wärme, verkürzt sich die Lebensdauer der Elektronik und der LED dramatisch.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Wirksame Stromglättung</h3>
+              <p>Bei der Umwandlung von Wechsel- zu Gleichstrom muss der Strom sauber geglättet werden. Ist die Glättung unzureichend, <strong>flackert das Licht</strong> — sichtbar oder unsichtbar, aber in beiden Fällen belastend für die Augen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Langlebige Elektrolytkondensatoren</h3>
+              <p>Hochwertige Elektrolytkondensatoren müssen die hohen Einschaltströme verkraften. Billige Kondensatoren sind oft das erste Bauteil, das ausfällt — und damit die häufigste Ursache für den frühen Tod einer LED-Leuchte.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">4</div>
+            <div>
+              <h3>Hoher Leistungsfaktor (PF ≥ 0,9)</h3>
+              <p>Der Leistungsfaktor (Power Factor) gibt an, wie viel Strom wirklich durch die Leitung fließt, bezogen auf die angegebene Wattzahl des Verbrauchers. Ein guter Wert liegt bei <strong>0,9 oder höher</strong>.</p>
+            </div>
+          </div>
+        </div>
+        <div class="umruestung-weg">
+          <div class="umruestung-weg-header">
+            <div class="step-number">5</div>
+            <div>
+              <h3>Hoher Wirkungsgrad</h3>
+              <p>Wenig Wärme bedeutet wenig Energieverlust. Ein effizienter Treiber wandelt möglichst viel der zugeführten Energie in Licht um, statt sie als Abwärme zu verschwenden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungsfaktor -->
+  <section class="section-spacious">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Praxis-Beispiel</span>
+        <h2>Warum der Leistungsfaktor so wichtig ist</h2>
+      </div>
+      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
+        <p>Im Dauerbetrieb hat der Leistungsfaktor direkte Auswirkungen darauf, wie viele Leuchten Sie an einem Stromkreis betreiben können:</p>
+
+        <div class="pf-compare">
+          <div class="pf-box good">
+            <h4>Guter PF = 0,95</h4>
+            <p>Der Stromfluss ist minimal. Sie können die <strong>maximale Anzahl an Leuchten</strong> anschließen.</p>
+          </div>
+          <div class="pf-box bad">
+            <h4>Schlechter PF = 0,50</h4>
+            <p>Bei gleicher Helligkeit und Wattzahl fließt der <strong>doppelte Strom</strong>. Die Sicherung wird doppelt so stark belastet. Sie können nur <strong>halb so viele</strong> Leuchten anschließen.</p>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.5rem;"><strong>Konkretes Beispiel:</strong> Sie möchten 40 LED-Panels mit je 35 Watt in einer Rasterdecke anordnen. Bei einem schlechten Leistungsfaktor können nur etwa 20 Leuchten an einem Sicherungsautomaten B16A angeschlossen werden — Sie benötigen also zwei Stromkreise. Bei einem Leistungsfaktor von PF &gt; 0,95 passen alle 40 Leuchten in einen einzigen Stromkreis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schutz & Prüfzeichen -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Sicherheit</span>
+        <h2>Schutzfunktionen und Prüfzeichen</h2>
+      </div>
+      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
+        <p>Weitere Qualitätsmerkmale lassen sich aus der Kennzeichnung ableiten:</p>
+        <ul>
+          <li><strong>Kurzschlussschutz</strong> — schützt den Treiber bei Verdrahtungsfehlern</li>
+          <li><strong>Überlastungsschutz</strong> — schaltet ab, bevor Bauteile überhitzen</li>
+          <li><strong>Übertemperaturschutz</strong> — verlängert die Lebensdauer bei schlechter Belüftung</li>
+          <li><strong>Schaltzyklen</strong> — wie viele Ein-/Ausschaltungen der Treiber übersteht</li>
+        </ul>
+        <p style="margin-top: 1.5rem;"><strong>Prüfzeichen</strong> erhöhen die Sicherheit vor elektrischen Störungen durch bauartbedingte Fehler. Das <strong>CE-Zeichen</strong> ist Pflicht, ein <strong>TÜV-</strong> oder <strong>ENEC-Zeichen</strong> bestätigt zusätzlich, dass die Geräte unabhängig geprüft wurden.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Retrofits -->
+  <section class="section-spacious">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Typisches Problem</span>
+        <h2>Warum Retrofits oft enttäuschen</h2>
+      </div>
+      <div class="about-text fade-in" style="max-width: 800px; margin: 0 auto;">
+        <p>Ein qualitativ hochwertiger Treiber benötigt einen gewissen Platz für die nötigen Bauteile. In LED-Retrofits — also Nachbildungen von Halogen- oder Leuchtstofflampen wie Reflektorlampen oder sogenannte Sparlampen — ist durch die vorgegebene Baugröße nur wenig Platz in den Sockeln, um ein entsprechendes Vorschaltgerät unterzubringen.</p>
+        <p>Deshalb ist ein Kompromiss nötig: Nur die Bauteile werden verbaut, die unbedingt für den Betrieb nötig sind. Daraus folgen:</p>
+        <ul>
+          <li><strong>Schlechte Wirkungsgrade</strong> — mehr Strom wird in Wärme statt Licht umgewandelt</li>
+          <li><strong>Flackern des Lichtes</strong> — durch fehlende Stromglättung</li>
+          <li><strong>Geringe Lebensdauer</strong> — weil die Wärmeabfuhr in der Regel nur unzureichend erfolgen kann</li>
+        </ul>
+        <p style="margin-top: 1rem;">Oft ist es daher kostengünstiger, <strong>kein Retrofit in eine alte Leuchte zu montieren, sondern gleich eine neue Leuchte mit einem vernünftigen Treiber zu installieren</strong>.</p>
+        <p style="margin-top: 1rem;">Mehr über die praktischen Auswirkungen des Treibers erfahren Sie in unseren Beiträgen über <a href="../led-dimmen/">LED dimmen</a> und <a href="../led-schalten/">LEDs schalten</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kennzahlen -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-strip-items fade-in">
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="90">0</div>
+          <div class="stats-strip-label">% Leistungsfaktor — Minimum für Qualitätstreiber</div>
+        </div>
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="40">0</div>
+          <div class="stats-strip-label">Panels an einem B16A-Stromkreis bei gutem PF</div>
+        </div>
+        <div class="stats-strip-item">
+          <div class="trust-number" data-target="20">0</div>
+          <div class="stats-strip-label">Panels bei schlechtem PF — doppelter Strom</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-spacious section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Häufige Fragen</span>
+        <h2>LED-Treiber kompakt</h2>
+      </div>
+      <div class="faq-list fade-in">
+        <details class="faq-item">
+          <summary>Was ist ein LED-Treiber?</summary>
+          <p>Ein LED-Treiber ist ein Vorschaltgerät, das die Netzspannung in die richtige Betriebsspannung (Konstantspannung in Volt) oder den richtigen Betriebsstrom (Konstantstrom in Ampere) für die LED umwandelt. Ohne Treiber kann eine LED nicht betrieben werden.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Was bedeutet der Leistungsfaktor (Power Factor)?</summary>
+          <p>Der Leistungsfaktor gibt an, wie viel Strom tatsächlich durch die Leitung fließt, bezogen auf die angegebene Wattzahl. Bei einem schlechten Leistungsfaktor (PF = 0,50) fließt bei gleicher Helligkeit der doppelte Strom — die Sicherung wird stärker belastet und es können nur halb so viele Leuchten angeschlossen werden. Ein guter Wert liegt bei PF ≥ 0,95.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Warum flackern manche LEDs?</summary>
+          <p>Flackern entsteht durch unzureichende Glättung des Stroms bei der Umwandlung von Wechsel- zu Gleichstrom im Treiber. Hochwertige Treiber verwenden langlebige Elektrolytkondensatoren, die den Strom sauber glätten und Flackern verhindern.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Warum sind LED-Retrofits oft problematisch?</summary>
+          <p>In Retrofits — also LED-Nachbildungen von Halogen- oder Leuchtstofflampen — ist durch die vorgegebene Baugröße nur wenig Platz für ein hochwertiges Vorschaltgerät. Es können nur die nötigsten Bauteile verbaut werden, was zu schlechten Wirkungsgraden, Flackern und geringer Lebensdauer führt. Oft ist eine neue Leuchte mit einem vernünftigen Treiber die bessere Wahl.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Welche Prüfzeichen sollte ein LED-Treiber haben?</summary>
+          <p>Das CE-Zeichen ist Pflicht. Zusätzliche Sicherheit bieten ein TÜV- oder ENEC-Zeichen, die bestätigen, dass die Geräte unabhängig geprüft wurden. Achten Sie außerdem auf Angaben zu Kurzschluss-, Überlastungs- und Übertemperaturschutz.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container fade-in">
+      <h2>Den richtigen Treiber finden</h2>
+      <p>Die Qualität des Treibers entscheidet über Lebensdauer, Lichtqualität und Effizienz Ihrer LED-Beleuchtung. Ich berate Sie gerne bei der Auswahl — ob Neubau, Sanierung oder Retrofit-Umstieg.</p>
+      <ul class="cta-checks">
+        <li>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Hoher Leistungsfaktor für maximale Effizienz
+        </li>
+        <li>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Flimmerfreie, langlebige Betriebsgeräte
+        </li>
+        <li>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          TÜV- und ENEC-geprüfte Qualität
+        </li>
+      </ul>
+      <a href="../../kontakt.html?produkt=LED-Treiber" class="btn btn-primary">
+        Jetzt Beratung anfordern
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="../../images/logo.png" alt="Logo" width="757" height="534">
+            <span>Lichttechnik &amp; Vertrieb</span>
+          </div>
+          <p>Ihr Partner für professionelle Beleuchtungslösungen. Beratung, Planung und Vertrieb seit 38 Jahren.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Startseite</a></li>
+            <li><a href="../../uber-uns.html">Unternehmen</a></li>
+            <li><a href="../../produkte.html">Produkte</a></li>
+            <li><a href="../../angebote.html">Angebote</a></li>
+            <li><a href="../../beleuchtungsplanung.html">3D-Planung</a></li>
+            <li><a href="../">Lichtwissen</a></li>
+            <li><a href="../../kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="../../impressum.html">Impressum</a></li>
+            <li><a href="../../datenschutz.html">Datenschutz</a></li>
+            <li><a href="../../agb.html">AGB</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+4961046683115">+49 6104-6683115</a></li>
+            <li><a href="mailto:info@lichttechnik-vertrieb.de">info@lichttechnik-vertrieb.de</a></li>
+            <li>Friedenstr. 3 b</li>
+            <li>63150 Heusenstamm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Rainer Ludwig. Alle Rechte vorbehalten.
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/4961046683115?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung." class="whatsapp-float has-sticky-cta" target="_blank" rel="noopener" aria-label="WhatsApp Kontakt">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Sticky Mobile CTA -->
+  <a href="../../kontakt.html" class="sticky-cta">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    Jetzt beraten lassen
+  </a>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>
