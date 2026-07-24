@@ -52,6 +52,24 @@
     </div>
   </footer>
 
+  <script>
+    // Alte WordPress-URLs auf neue Seiten weiterleiten
+    var map = {
+      'unser-unternehmen': '/uber-uns.html',
+      'unternehmen': '/uber-uns.html',
+      'produkte': '/produkte.html',
+      'kontakt': '/kontakt.html',
+      'angebote': '/angebote.html',
+      'lichtwissen': '/lichtwissen/',
+      '3d-planung': '/beleuchtungsplanung.html',
+      'beleuchtungsplanung': '/beleuchtungsplanung.html',
+      'impressum': '/impressum.html',
+      'datenschutz': '/datenschutz.html',
+      'agb': '/agb.html'
+    };
+    var path = location.pathname.replace(/\/index\.php\//i, '').replace(/\/$/, '').split('/').pop();
+    if (path && map[path]) location.replace(map[path]);
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
