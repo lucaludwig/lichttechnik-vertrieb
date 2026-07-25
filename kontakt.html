@@ -2,7 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0f2744">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="description" content="Kontaktieren Sie Lichttechnik und Vertrieb - Telefon, E-Mail oder Kontaktformular. Ich berate Sie gerne.">
   <title>Kontakt | Lichttechnik und Vertrieb</title>
   <link rel="stylesheet" href="css/style.css">
@@ -72,15 +74,15 @@
             <input type="checkbox" name="botcheck" style="display:none">
             <div class="form-group">
               <label for="name">Name *</label>
-              <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
+              <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name" autocomplete="name">
             </div>
             <div class="form-group">
               <label for="email">E-Mail *</label>
-              <input type="email" id="email" name="email" required placeholder="ihre@email.de">
+              <input type="email" id="email" name="email" required placeholder="ihre@email.de" autocomplete="email" inputmode="email">
             </div>
             <div class="form-group">
               <label for="telefon">Telefon</label>
-              <input type="tel" id="telefon" name="telefon" placeholder="Ihre Telefonnummer (optional)">
+              <input type="tel" id="telefon" name="telefon" placeholder="Ihre Telefonnummer (optional)" autocomplete="tel" inputmode="tel">
             </div>
             <div class="form-group">
               <label for="message">Nachricht *</label>

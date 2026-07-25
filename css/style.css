@@ -10,12 +10,19 @@
   --text-light: #6b7280;
   --bg-alt: #f8fafc;
   --radius: 12px;
+  /* Safe Area Insets */
+  --sai-top: env(safe-area-inset-top, 0px);
+  --sai-bottom: env(safe-area-inset-bottom, 0px);
+  --sai-left: env(safe-area-inset-left, 0px);
+  --sai-right: env(safe-area-inset-right, 0px);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* iOS: Disable tap highlight */
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -25,6 +32,11 @@ img {
 
 html {
   scroll-behavior: smooth;
+  /* Prevent iOS overscroll bounce */
+  overscroll-behavior: none;
+  /* Text size adjust for mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -42,12 +54,15 @@ body {
   z-index: 1000;
   transition: all 0.3s ease;
   padding: 1rem 0;
+  padding-top: calc(1rem + var(--sai-top));
 }
 
 .navbar.scrolled {
   background: rgba(15, 39, 68, 0.97);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 0.5rem 0;
+  padding-top: calc(0.5rem + var(--sai-top));
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -55,6 +70,8 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
+  padding-left: calc(2rem + var(--sai-left));
+  padding-right: calc(2rem + var(--sai-right));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -142,6 +159,11 @@ body {
   background: none;
   border: none;
   padding: 0.5rem;
+  /* Touch target min 44x44 */
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger span {
@@ -179,8 +201,11 @@ body {
     background: rgba(15, 39, 68, 0.98);
     flex-direction: column;
     padding: 1.5rem;
+    padding-left: calc(1.5rem + var(--sai-left));
+    padding-right: calc(1.5rem + var(--sai-right));
     gap: 1rem;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .nav-links.open {
@@ -189,7 +214,11 @@ body {
 
   .nav-links a {
     font-size: 1rem;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
+    /* Touch target min 44px height */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -276,6 +305,17 @@ body {
   transition: all 0.3s;
   border: none;
   cursor: pointer;
+  /* Touch target min 44px height */
+  min-height: 44px;
+  /* Touch action for smooth scroll */
+  touch-action: manipulation;
+}
+
+/* Focus visible for keyboard accessibility */
+.btn:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -814,7 +854,7 @@ body {
 /* ========== Service Cards ========== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -876,7 +916,7 @@ body {
 /* ========== Project Gallery ========== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1.5rem;
 }
 
@@ -923,7 +963,7 @@ body {
 /* ========== Detailed Project Cards ========== */
 .projects-grid-detailed {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -1084,7 +1124,7 @@ body {
 /* ========== Product Cards ========== */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
   gap: 1.5rem;
 }
 
@@ -1152,7 +1192,7 @@ body {
   gap: 0.4rem;
   margin-top: auto;
   padding-top: 0.75rem;
-  padding: 0.5rem 1rem;
+  padding: 0.65rem 1rem;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--primary);
@@ -1160,6 +1200,8 @@ body {
   border-radius: 6px;
   text-decoration: none;
   transition: all 0.2s;
+  /* Touch target min 44px */
+  min-height: 44px;
 }
 
 .product-card .card-body .btn-product:hover {
@@ -1252,6 +1294,9 @@ body {
   cursor: pointer;
   list-style: none;
   transition: color 0.2s;
+  /* Touch target min 44px */
+  min-height: 44px;
+  touch-action: manipulation;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -1382,19 +1427,25 @@ body {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
   padding: 0.85rem 1rem;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-family: inherit;
-  font-size: 0.95rem;
+  /* 16px prevents iOS zoom on focus */
+  font-size: 1rem;
   transition: border-color 0.2s, box-shadow 0.2s;
   background: white;
+  /* iOS: remove default styling */
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.1);
@@ -1417,6 +1468,10 @@ body {
 .form-check input[type="checkbox"] {
   margin-top: 0.2rem;
   accent-color: var(--accent);
+  /* Touch target min 20x20 for checkboxes */
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 /* ========== Map ========== */
@@ -1540,7 +1595,7 @@ body {
 /* ========== 3D Gallery ========== */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1.5rem;
 }
 
@@ -1615,7 +1670,7 @@ body {
 }
 
 .footer-links li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .footer-links a {
@@ -1623,6 +1678,9 @@ body {
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s;
+  /* Touch target: padding for tappable area */
+  display: inline-block;
+  padding: 0.25rem 0;
 }
 
 .footer-links a:hover {
@@ -1631,6 +1689,7 @@ body {
 
 .footer-bottom {
   padding: 1.5rem 0;
+  padding-bottom: calc(1.5rem + var(--sai-bottom));
   text-align: center;
   font-size: 0.85rem;
 }
@@ -1792,6 +1851,7 @@ body {
     z-index: 998;
     background: var(--accent);
     padding: 0.75rem 1.5rem;
+    padding-bottom: calc(0.75rem + var(--sai-bottom));
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
@@ -1800,6 +1860,8 @@ body {
     color: var(--primary-dark);
     font-weight: 700;
     font-size: 1rem;
+    /* Touch target min 44px */
+    min-height: 44px;
     transition: opacity 0.3s, transform 0.3s;
   }
 
@@ -1847,7 +1909,7 @@ body {
 
 @media (max-width: 768px) {
   .whatsapp-float.has-sticky-cta {
-    bottom: 72px;
+    bottom: calc(72px + var(--sai-bottom));
   }
 }
 
@@ -1883,6 +1945,64 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* ========== Scroll & Overscroll ========== */
+body {
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========== Mobile-specific fixes ========== */
+@media (max-width: 768px) {
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Container padding with safe area */
+  .container {
+    padding-left: calc(1.25rem + var(--sai-left));
+    padding-right: calc(1.25rem + var(--sai-right));
+  }
+
+  /* Before/After slider touch-friendly */
+  .before-after {
+    touch-action: pan-y;
+  }
+
+  .before-after-slider {
+    touch-action: pan-x;
+  }
+
+  /* Body padding for sticky CTA */
+  body:has(.sticky-cta) {
+    padding-bottom: calc(56px + var(--sai-bottom));
+  }
+
+  /* Breadcrumb wrapping */
+  .breadcrumb {
+    flex-wrap: wrap;
+  }
+
+  /* Scroll indicator spacing */
+  .scroll-indicator {
+    bottom: calc(2rem + var(--sai-bottom));
+  }
+}
+
+/* ========== Touch-action improvements ========== */
+.nav-links a,
+.footer-links a,
+.contact-info-item a,
+.trust-detail a {
+  touch-action: manipulation;
+}
+
+/* ========== Selection color ========== */
+::selection {
+  background: rgba(212, 160, 23, 0.3);
+  color: var(--text);
 }
 
 /* ========== Print ========== */

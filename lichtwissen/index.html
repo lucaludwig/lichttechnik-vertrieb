@@ -2,7 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0f2744">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="description" content="Lichtwissen: LED-Technik verständlich erklärt - Lichtfarbe, Farbwiedergabe, Dimmen und mehr. Praxisnahe Beiträge vom DIN-zertifizierten Lichttechniker.">
   <title>Lichtwissen | Lichttechnik und Vertrieb</title>
   <link rel="stylesheet" href="../css/style.css">
@@ -17,7 +19,7 @@
   <meta property="og:site_name" content="Lichttechnik und Vertrieb">
   <style>
     /* ponytail: Artikel-Karten nur hier gebraucht */
-    .lichtwissen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .lichtwissen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 2rem; margin-top: 2rem; }
     .lichtwissen-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: box-shadow 0.2s, transform 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
     .lichtwissen-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); transform: translateY(-2px); }
     .lichtwissen-card img { width: 100%; height: 200px; object-fit: cover; }
