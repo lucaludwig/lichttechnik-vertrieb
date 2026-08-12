@@ -161,6 +161,58 @@
     </div>
   </section>
 
+  <!-- Newsletter: Angebot des Monats per E-Mail -->
+  <section class="section-spacious section-alt" id="newsletter">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Kein Angebot verpassen</span>
+        <h2>Angebote per E-Mail erhalten</h2>
+        <p>Einmal im Monat die aktuellen Angebote direkt ins Postfach. Kostenlos und jederzeit mit einem Klick abbestellbar.</p>
+      </div>
+
+      <div style="max-width: 480px; margin: 0 auto;" class="fade-in">
+        <!-- ================================================================
+             RAINER / LUCA – ANMELDEFORMULAR ZOHO CAMPAIGNS:
+
+             Die Felder unten (CONTACT_EMAIL, FIRSTNAME) sind die von Zoho
+             erwarteten Namen. Was noch aus dem Zoho-Backend kommen muss:
+             Zoho Campaigns → Contacts → Signup Forms → Formular auswählen
+             → Publish → "Raw HTML". Aus dem generierten Code übernehmen:
+               1. die action-URL (Form: https://<kennung>.maillist-manage.eu/weboptin.zc)
+               2. alle <input type="hidden"> Zeilen (zx, lD, zc_formIx, zcvers, mode, ...)
+             Diese Werte sind kontospezifisch und lassen sich nicht raten.
+
+             Double-Opt-in muss in Zoho aktiv sein (Signup Form → Settings),
+             sonst ist die Anmeldung in Deutschland nicht nachweisbar.
+             ================================================================ -->
+        <form method="POST" action="ZOHO-ACTION-URL-EINSETZEN" accept-charset="UTF-8">
+
+          <!-- ZOHO-HIDDEN-FIELDS-EINSETZEN: hier die hidden inputs aus dem Raw-HTML-Code -->
+
+          <div class="form-group">
+            <label for="nl-firstname">Vorname</label>
+            <input type="text" id="nl-firstname" name="FIRSTNAME" placeholder="Für die persönliche Anrede (optional)" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="nl-email">E-Mail *</label>
+            <input type="email" id="nl-email" name="CONTACT_EMAIL" required placeholder="ihre@email.de" autocomplete="email" inputmode="email">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="nl-consent" required>
+            <label for="nl-consent">Ich möchte die monatlichen Angebote per E-Mail erhalten. Mir ist bekannt, dass ich diese Einwilligung jederzeit widerrufen kann. Hinweise zur Verarbeitung in der <a href="datenschutz.html">Datenschutzerklärung</a>. *</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Angebote abonnieren
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+        </form>
+        <p style="font-size: 0.8rem; color: #6b7280; margin-top: 1rem; text-align: center;">
+          Sie erhalten zuerst eine E-Mail mit einem Bestätigungslink. Erst nach dem Klick sind Sie angemeldet.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-banner">
     <div class="container fade-in">
