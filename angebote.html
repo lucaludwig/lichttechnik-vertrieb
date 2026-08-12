@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0f2744">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="description" content="Angebot des Monats - Aktuelle Sonderangebote bei Lichttechnik und Vertrieb. LED-Spots, Schienenstrahler, Deckenventilator.">
+  <meta name="description" content="Angebot des Monats bei Lichttechnik und Vertrieb - monatlich wechselnde Sonderangebote für LED-Leuchten, Spots und Leuchtmittel. Jetzt Produkt anfragen.">
   <title>Angebot des Monats | Lichttechnik und Vertrieb</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="canonical" href="https://lichttechnik-vertrieb.de/angebote.html">
   <meta property="og:title" content="Angebot des Monats | Lichttechnik und Vertrieb">
-  <meta property="og:description" content="Aktuelle Sonderangebote - LED-Spots, Schienenstrahler, Deckenventilator mit attraktiven Preisen.">
+  <meta property="og:description" content="Monatlich wechselnde Sonderangebote für LED-Leuchten, Spots und Leuchtmittel.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lichttechnik-vertrieb.de/angebote.html">
   <meta property="og:locale" content="de_DE">
@@ -62,81 +62,90 @@
   <section class="section-spacious">
     <div class="container">
       <div class="section-header fade-in">
-        <!-- RAINER: Monat und Jahr hier ändern, z.B. "Juli 2026" -->
-        <span class="section-label">Juli 2026</span>
-        <h2>Aktuelle Angebote</h2>
-        <p>Alle Preise zzgl. 19% MwSt. · Solange Vorrat reicht</p>
+        <!-- RAINER: Monat und Jahr hier ändern, z.B. "September 2026" -->
+        <span class="section-label">August 2026</span>
+        <h2>Neue Angebote in Vorbereitung</h2>
+        <p>Die Juli-Angebote sind ausgelaufen, die neuen Monatsangebote folgen in Kürze.</p>
+      </div>
+
+      <div style="text-align:center;" class="fade-in">
+        <a href="produkte.html" class="btn btn-dark">
+          Produktsortiment ansehen
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
 
       <!-- ================================================================
            RAINER – ANGEBOTE MONATLICH AKTUALISIEREN:
 
-           Schritt 1: "section-label" oben ändern (Monat + Jahr)
-           Schritt 2: Pro Produkt unten Bildname, Titel, Specs und Preis anpassen
-           Schritt 3: Neues Produktbild hochladen als images/angebot-[monat]-[name].jpg
-                      (Beispiel: images/angebot-juli-einbauleuchte.jpg)
+           Schritt 1: "section-label" oben ändern (Monat + Jahr),
+                      Überschrift zurück auf "Aktuelle Angebote" setzen und
+                      als Text "Alle Preise zzgl. 19% MwSt. · Solange Vorrat reicht"
+           Schritt 2: Den Produktblock unten wieder sichtbar machen: die Zeile
+                      mit ANGEBOTE-START und die Zeile mit ANGEBOTE-ENDE
+                      komplett löschen (beide Zeilen ganz, mit Klammern)
+           Schritt 3: Pro Produkt Bildname, Titel, Specs und Preis anpassen
+           Schritt 4: Neues Produktbild hochladen als images/angebot-[monat]-[name].jpg
+                      (Beispiel: images/angebot-august-einbauleuchte.jpg)
+
+           Wichtig: Sobald ein Monat vorbei ist, den Block wieder deaktivieren
+           (alte Preise dürfen nicht stehen bleiben) oder neue Angebote eintragen.
 
            Wie bearbeiten: 1&1 Control Center → Hosting → Dateimanager
            → Datei "angebote.html" auswählen → Bearbeiten (Stift-Symbol)
            Danach auch in index.html den Abschnitt "Angebot des Monats" anpassen.
            ================================================================ -->
+
+      <!-- ANGEBOTE-START
       <div class="angebote-grid">
 
-        <!-- PRODUKT 1: Bildname (img src), Titel (h3), Specs (li) und Preis anpassen -->
         <div class="angebot-card fade-in">
           <div class="angebot-badge">Angebot des Monats</div>
           <div class="angebot-card-image">
-            <img src="images/angebot-juni-gu10.jpg" alt="OSRAM MR16 LED-Spot-Lampe GU10" loading="lazy">
+            <img src="images/angebot-juni-gu10.jpg" alt="Produktname" loading="lazy">
           </div>
           <div class="angebot-card-body">
-            <h3>OSRAM MR16 LED-Spot-Lampe GU10 - 10er-Pack</h3>
+            <h3>Produktname</h3>
             <ul class="angebot-specs">
-              <li>6W, 230V, Sockel GU10</li>
-              <li>720 Lumen, flickerfrei</li>
-              <li>Abstrahlwinkel 38°</li>
-              <li>10 Stück im Pack</li>
+              <li>Technische Angabe 1</li>
+              <li>Technische Angabe 2</li>
+              <li>Technische Angabe 3</li>
             </ul>
-            <div class="angebot-price">14,15 €</div>
-            <div class="angebot-price-unit">pro 10er-Pack*</div>
-          </div>
-        </div>
-
-        <!-- PRODUKT 2: Bildname (img src), Titel (h3), Specs (li) und Preis anpassen -->
-        <div class="angebot-card fade-in">
-          <div class="angebot-badge">Angebot des Monats</div>
-          <div class="angebot-card-image">
-            <img src="images/angebot-juni-schienenstrahler.jpg" alt="LED-3-Phasen-Schienenstrahler 40W schwarz" loading="lazy">
-          </div>
-          <div class="angebot-card-body">
-            <h3>LED-3-Phasen-Schienenstrahler 40W</h3>
-            <ul class="angebot-specs">
-              <li>Alu-Gehäuse, schwarz, Universaladapter</li>
-              <li>Lichtfarbe umschaltbar: 3.000K / 4.000K / 6.000K</li>
-              <li>CRI &gt; 92, 4.400 lm</li>
-              <li>Abstrahlwinkel 40°, IP20</li>
-            </ul>
-            <div class="angebot-price">48,50 €</div>
+            <div class="angebot-price">0,00 €</div>
             <div class="angebot-price-unit">pro Stück*</div>
           </div>
         </div>
 
-        <!-- PRODUKT 3: Bildname (img src), Titel (h3), Specs (li) und Preis anpassen -->
         <div class="angebot-card fade-in">
           <div class="angebot-badge">Angebot des Monats</div>
           <div class="angebot-card-image">
-            <img src="images/angebot-juni-ventilator.jpg" alt="Deckenventilator mit Deckenleuchte 20W DC Motor" loading="lazy">
+            <img src="images/angebot-juni-schienenstrahler.jpg" alt="Produktname" loading="lazy">
           </div>
           <div class="angebot-card-body">
-            <h3>Deckenventilator mit Deckenleuchte - Ø 50cm</h3>
+            <h3>Produktname</h3>
             <ul class="angebot-specs">
-              <li>20W DC Motor, max. 50 dB bei 850 RPM</li>
-              <li>6-stufige Geschwindigkeitseinstellung</li>
-              <li>Deckenleuchte 30W, zuschaltbar</li>
-              <li>Lichtfarbe umschaltbar: 3.000K / 4.000K / 6.000K</li>
-              <li>Flügel transparent ABS, Gehäuse weiß</li>
-              <li>230V, max. Dachneigung 25°, Höhe 145mm</li>
+              <li>Technische Angabe 1</li>
+              <li>Technische Angabe 2</li>
+              <li>Technische Angabe 3</li>
             </ul>
-            <div class="angebot-price">58,40 €</div>
+            <div class="angebot-price">0,00 €</div>
+            <div class="angebot-price-unit">pro Stück*</div>
+          </div>
+        </div>
+
+        <div class="angebot-card fade-in">
+          <div class="angebot-badge">Angebot des Monats</div>
+          <div class="angebot-card-image">
+            <img src="images/angebot-juni-ventilator.jpg" alt="Produktname" loading="lazy">
+          </div>
+          <div class="angebot-card-body">
+            <h3>Produktname</h3>
+            <ul class="angebot-specs">
+              <li>Technische Angabe 1</li>
+              <li>Technische Angabe 2</li>
+              <li>Technische Angabe 3</li>
+            </ul>
+            <div class="angebot-price">0,00 €</div>
             <div class="angebot-price-unit">pro Stück*</div>
           </div>
         </div>
@@ -144,14 +153,15 @@
       </div>
 
       <p class="angebot-vat-note fade-in">* alle Preise zzgl. 19% MwSt.</p>
+      ANGEBOTE-ENDE -->
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta-banner">
     <div class="container fade-in">
-      <h2>Interesse an einem Angebot?</h2>
-      <p>Kontaktieren Sie mich direkt - ich berate Sie gerne und kläre Verfügbarkeit und Lieferzeit.</p>
+      <h2>Sie suchen ein bestimmtes Produkt?</h2>
+      <p>Kontaktieren Sie mich direkt - ich berate Sie gerne und kläre Preis, Verfügbarkeit und Lieferzeit.</p>
       <a href="kontakt.html" class="btn btn-primary">
         Jetzt anfragen
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
