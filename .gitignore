@@ -4,3 +4,7 @@ Thumbs.db
 *.swo
 *~
 .vercel
+
+# Personendaten nie in dieses oeffentliche Pages-Repo (Adresslisten liegen in ~/Documents/lichttechnik-adressen/)
+*.csv
+*.xlsx
