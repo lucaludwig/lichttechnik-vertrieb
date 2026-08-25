@@ -162,7 +162,25 @@
   </section>
 
   <!-- Newsletter: Angebot des Monats per E-Mail -->
-  <section class="section-spacious section-alt" id="newsletter">
+  <!-- ================================================================
+     AUSGEBLENDET am 25.08.2026 -- das Formular war live und ging ins Leere.
+
+     `action="ZOHO-ACTION-URL-EINSETZEN"` ist ein Platzhalter, kein Ziel. Der
+     Commit dazu sollte laut Ticket ungepusht bleiben, war es aber nicht: auf
+     lichttechnik-vertrieb.de/angebote.html stand der Platzhalter im Netz.
+     Wer Name, Adresse und Einwilligung eintrug und auf "Angebote abonnieren"
+     klickte, hat auf einen nicht existierenden Pfad gepostet -- er glaubt, er
+     ist angemeldet, und es ist nichts passiert. Eine erteilte Einwilligung ins
+     Nichts ist schlechter als kein Formular.
+
+     WIEDER EINSCHALTEN: `hidden` unten entfernen, sobald in Zoho Campaigns das
+     Signup-Formular angelegt ist und die zwei Werte daraus hier stehen --
+     die action-URL und die hidden inputs (zx, lD, zc_formIx, zcvers, mode).
+     Beide sind kontospezifisch und lassen sich nicht raten. Double-Opt-in in
+     Zoho aktivieren, sonst ist die Anmeldung in Deutschland nicht nachweisbar.
+     Trello: J8tBxokW
+     ================================================================ -->
+<section class="section-spacious section-alt" id="newsletter" hidden>
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-label">Kein Angebot verpassen</span>
