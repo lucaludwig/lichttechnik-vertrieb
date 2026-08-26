@@ -173,11 +173,21 @@
      ist angemeldet, und es ist nichts passiert. Eine erteilte Einwilligung ins
      Nichts ist schlechter als kein Formular.
 
-     WIEDER EINSCHALTEN: `hidden` unten entfernen, sobald in Zoho Campaigns das
-     Signup-Formular angelegt ist und die zwei Werte daraus hier stehen --
-     die action-URL und die hidden inputs (zx, lD, zc_formIx, zcvers, mode).
-     Beide sind kontospezifisch und lassen sich nicht raten. Double-Opt-in in
-     Zoho aktivieren, sonst ist die Anmeldung in Deutschland nicht nachweisbar.
+     STAND 26.08.2026: action-URL und hidden inputs stehen jetzt drin, gegen den
+     Endpunkt geprueft (HTTP 200, listId 295445000000035892). Double-Opt-in ist
+     aktiv, belegt durch die Antwort des Endpunkts selbst.
+
+     ES BLEIBT AUSGEBLENDET wegen EINER offenen Sache: Zoho antwortet auf jede
+     Anmeldung mit "Welcome to Community Council for Somerset". Das ist der
+     Organisationsname im Zoho-Konto - eine fremde englische Gemeinde. Genau
+     dieser Name steht in der Bestaetigungsmail, die der Interessent bekommt.
+     Ein Formular, dessen Bestaetigungsmail im Namen einer fremden Organisation
+     kommt, ist schlimmer als kein Formular: es sieht aus wie Phishing.
+
+     WIEDER EINSCHALTEN: `hidden` unten entfernen, sobald der Organisationsname
+     in Zoho auf "Lichttechnik & Vertrieb" steht (Zoho Campaigns -> Einstellungen
+     -> Organisation) und eine Testanmeldung eine Bestaetigungsmail mit dem
+     richtigen Absendernamen erzeugt.
      Trello: J8tBxokW
      ================================================================ -->
 <section class="section-spacious section-alt" id="newsletter" hidden>
@@ -192,20 +202,28 @@
         <!-- ================================================================
              RAINER / LUCA – ANMELDEFORMULAR ZOHO CAMPAIGNS:
 
-             Die Felder unten (CONTACT_EMAIL, FIRSTNAME) sind die von Zoho
-             erwarteten Namen. Was noch aus dem Zoho-Backend kommen muss:
-             Zoho Campaigns → Contacts → Signup Forms → Formular auswählen
-             → Publish → "Raw HTML". Aus dem generierten Code übernehmen:
-               1. die action-URL (Form: https://<kennung>.maillist-manage.eu/weboptin.zc)
-               2. alle <input type="hidden"> Zeilen (zx, lD, zc_formIx, zcvers, mode, ...)
-             Diese Werte sind kontospezifisch und lassen sich nicht raten.
+             Die Werte unten stammen aus dem gehosteten Zoho-Formular derselben
+             Liste (https://zcmp.eu/cA5B, Liste "Monatsangebot", 300 Kontakte) und
+             sind am 26.08.2026 gegen den Endpunkt geprueft: ein POST mit genau
+             diesen Feldern wird mit HTTP 200 und listId 295445000000035892
+             angenommen, auch ohne LASTNAME.
 
-             Double-Opt-in muss in Zoho aktiv sein (Signup Form → Settings),
-             sonst ist die Anmeldung in Deutschland nicht nachweisbar.
+             Double-Opt-in ist aktiv - Zoho antwortet "We have sent a confirmation
+             link to your email address". Nicht aus einer Einstellung gelesen,
+             sondern aus der Antwort des Endpunkts.
              ================================================================ -->
-        <form method="POST" action="ZOHO-ACTION-URL-EINSETZEN" accept-charset="UTF-8">
+        <form method="POST" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" accept-charset="UTF-8">
 
-          <!-- ZOHO-HIDDEN-FIELDS-EINSETZEN: hier die hidden inputs aus dem Raw-HTML-Code -->
+          <!-- Kontospezifische Zoho-Werte, aus dem gehosteten Formular derselben Liste. -->
+          <input type="hidden" name="zx" value="14af235f79">
+          <input type="hidden" name="lD" value="1419a1a983aadc34">
+          <input type="hidden" name="listId" value="295445000000035892">
+          <input type="hidden" name="mandatoryListId" value="295445000000035892">
+          <input type="hidden" name="zcvers" value="2.0">
+          <input type="hidden" name="mode" value="OptinCreateView">
+          <input type="hidden" name="submitType" value="optinForm_save">
+          <input type="hidden" name="viewFrom" value="URL_ACTION">
+          <input type="hidden" name="zc_formIx" value="">
 
           <div class="form-group">
             <label for="nl-firstname">Vorname</label>
