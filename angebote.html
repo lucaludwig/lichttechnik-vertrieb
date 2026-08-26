@@ -163,36 +163,24 @@
 
   <!-- Newsletter: Angebot des Monats per E-Mail -->
   <!-- ================================================================
-     AUSGEBLENDET am 25.08.2026 -- das Formular war live und ging ins Leere.
+     LIVE seit 26.08.2026. Vorgeschichte: das Formular stand am 25.08. schon einmal
+     im Netz und sendete ins Leere - `action` war ein Platzhalter. Wer Name, Adresse
+     und Einwilligung eintrug, hat auf einen nicht existierenden Pfad gepostet und
+     glaubte, er sei angemeldet. Deshalb war es ausgeblendet.
 
-     Die action-URL war ein Platzhalter, kein Ziel. Der Commit dazu sollte laut
-     Ticket ungepusht bleiben, war es aber nicht: auf
-     lichttechnik-vertrieb.de/angebote.html stand der Platzhalter im Netz.
-     (Die Werte stehen seit 26.08. drin, siehe unten - geblieben ist nur die
-     Ausblendung, aus einem anderen Grund.)
-     Wer Name, Adresse und Einwilligung eintrug und auf "Angebote abonnieren"
-     klickte, hat auf einen nicht existierenden Pfad gepostet -- er glaubt, er
-     ist angemeldet, und es ist nichts passiert. Eine erteilte Einwilligung ins
-     Nichts ist schlechter als kein Formular.
+     Jetzt traegt es die Werte des Zoho-Formulars "Lichttechnik Angebote" (Liste
+     Monatsangebot, 300 Kontakte - dieselbe, die die Monatskampagne bekommt).
+     Am Endpunkt geprueft, nicht abgeschrieben: HTTP 200, listId
+     295445000000035892, Antwort "Welcome to Lichttechnik & Vertrieb" und
+     "We have sent a confirmation link to your email address" - Double-Opt-in
+     ist also aktiv.
 
-     STAND 26.08.2026: action-URL und hidden inputs stehen jetzt drin, gegen den
-     Endpunkt geprueft (HTTP 200, listId 295445000000035892). Double-Opt-in ist
-     aktiv, belegt durch die Antwort des Endpunkts selbst.
-
-     ES BLEIBT AUSGEBLENDET wegen EINER offenen Sache: Zoho antwortet auf jede
-     Anmeldung mit "Welcome to Community Council for Somerset". Das ist der
-     Organisationsname im Zoho-Konto - eine fremde englische Gemeinde. Genau
-     dieser Name steht in der Bestaetigungsmail, die der Interessent bekommt.
-     Ein Formular, dessen Bestaetigungsmail im Namen einer fremden Organisation
-     kommt, ist schlimmer als kein Formular: es sieht aus wie Phishing.
-
-     WIEDER EINSCHALTEN: `hidden` unten entfernen, sobald der Organisationsname
-     in Zoho auf "Lichttechnik & Vertrieb" steht (Zoho Campaigns -> Einstellungen
-     -> Organisation) und eine Testanmeldung eine Bestaetigungsmail mit dem
-     richtigen Absendernamen erzeugt.
+     Die Werte gehoeren zu GENAU diesem Zoho-Formular. Wird es dort geloescht oder
+     neu angelegt, sendet diese Seite wieder ins Leere - dann `zc_formIx`, `zcld`
+     und `zctd` aus dem neuen Einbett-Code uebernehmen.
      Trello: J8tBxokW
      ================================================================ -->
-<section class="section-spacious section-alt" id="newsletter" hidden>
+<section class="section-spacious section-alt" id="newsletter">
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-label">Kein Angebot verpassen</span>
@@ -216,16 +204,22 @@
              ================================================================ -->
         <form method="POST" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" accept-charset="UTF-8">
 
-          <!-- Kontospezifische Zoho-Werte, aus dem gehosteten Formular derselben Liste. -->
+          <!-- Kontospezifische Zoho-Werte aus dem Formular "Lichttechnik Angebote"
+               (Zoho Campaigns, Liste Monatsangebot). Ohne Zohos optin.min.js: das
+               Skript ist ein Drittanbieter-Aufruf beim Seitenaufbau und wird fuer
+               einen POST nicht gebraucht. Der Besucher landet nach dem Absenden auf
+               Zohos Dankseite. -->
+          <input type="hidden" name="zc_formIx" value="3z0b8ed882fcff40629014f774b6a6577c84454f4e9f40f6c4933c756b33d2c5ee">
+          <input type="hidden" name="zcld" value="1419a1a983aadc34">
+          <input type="hidden" name="zctd" value="1419a1a983aac921">
           <input type="hidden" name="zx" value="14af235f79">
-          <input type="hidden" name="lD" value="1419a1a983aadc34">
-          <input type="hidden" name="listId" value="295445000000035892">
-          <input type="hidden" name="mandatoryListId" value="295445000000035892">
           <input type="hidden" name="zcvers" value="2.0">
           <input type="hidden" name="mode" value="OptinCreateView">
-          <input type="hidden" name="submitType" value="optinForm_save">
+          <input type="hidden" name="submitType" value="optinCustomView">
+          <input type="hidden" name="formType" value="QuickForm">
+          <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
           <input type="hidden" name="viewFrom" value="URL_ACTION">
-          <input type="hidden" name="zc_formIx" value="">
+          <input type="hidden" name="oldListIds" value="">
 
           <div class="form-group">
             <label for="nl-firstname">Vorname</label>
