@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0f2744">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Vielen Dank | Lichttechnik und Vertrieb</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Vielen Dank | Lichttechnik und Vertrieb">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Lichttechnik und Vertrieb">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Lichttechnik und Vertrieb Logo" width="757" height="534">
+        <span>Lichttechnik &amp; Vertrieb</span>
+      </a>
+      <button class="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="uber-uns.html">Unternehmen</a></li>
+        <li><a href="produkte.html">Produkte</a></li>
+        <li><a href="angebote.html">Angebote</a></li>
+        <li><a href="beleuchtungsplanung.html">3D-Planung</a></li>
+        <li><a href="lichtwissen/">Lichtwissen</a></li>
+        <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header" style="min-height: 60vh; display: flex; align-items: center;">
+      <div class="container" style="text-align: center;">
+        <h1 id="titel" style="font-size: 3rem; margin-bottom: 0.5rem;">Vielen Dank</h1>
+        <p id="text" style="font-size: 1.25rem; margin-bottom: 2rem;">Ihre Anmeldung ist bestätigt. Sie erhalten ab jetzt einmal im Monat unsere Angebote.</p>
+        <a href="angebote.html" class="btn btn-primary">Zurück zu den Angeboten</a>
+      </div>
+    </section>
+    <script>
+      if (new URLSearchParams(location.search).get('fehler') === '1') {
+        document.getElementById('titel').textContent = 'Das hat leider nicht geklappt';
+        document.getElementById('text').textContent = 'Bitte prüfen Sie Ihre E-Mail-Adresse und versuchen Sie es erneut, oder schreiben Sie uns an info@lichttechnik-vertrieb.de.';
+      }
+    </script>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        &copy; 2026 Rainer Ludwig. Alle Rechte vorbehalten.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -260,25 +260,7 @@
     </div>
   </section>
 
-  <!-- Newsletter: Angebot des Monats per E-Mail -->
-  <!-- ================================================================
-     LIVE seit 26.08.2026. Vorgeschichte: das Formular stand am 25.08. schon einmal
-     im Netz und sendete ins Leere - `action` war ein Platzhalter. Wer Name, Adresse
-     und Einwilligung eintrug, hat auf einen nicht existierenden Pfad gepostet und
-     glaubte, er sei angemeldet. Deshalb war es ausgeblendet.
-
-     Jetzt traegt es die Werte des Zoho-Formulars "Lichttechnik Angebote" (Liste
-     Monatsangebot, 300 Kontakte - dieselbe, die die Monatskampagne bekommt).
-     Am Endpunkt geprueft, nicht abgeschrieben: HTTP 200, listId
-     295445000000035892, Antwort "Welcome to Lichttechnik & Vertrieb" und
-     "We have sent a confirmation link to your email address" - Double-Opt-in
-     ist also aktiv.
-
-     Die Werte gehoeren zu GENAU diesem Zoho-Formular. Wird es dort geloescht oder
-     neu angelegt, sendet diese Seite wieder ins Leere - dann `zc_formIx`, `zcld`
-     und `zctd` aus dem neuen Einbett-Code uebernehmen.
-     Trello: J8tBxokW
-     ================================================================ -->
+  <!-- Newsletter: Anmeldung über eigenes Portal (Double-Opt-in), Verarbeitung siehe datenschutz.html -->
 <section class="section-spacious section-alt" id="newsletter">
     <div class="container">
       <div class="section-header fade-in">
@@ -288,48 +270,18 @@
       </div>
 
       <div style="max-width: 480px; margin: 0 auto;" class="fade-in">
-        <!-- ================================================================
-             RAINER / LUCA – ANMELDEFORMULAR ZOHO CAMPAIGNS:
-
-             Die Werte unten stammen aus dem gehosteten Zoho-Formular derselben
-             Liste (https://zcmp.eu/cA5B, Liste "Monatsangebot", 300 Kontakte) und
-             sind am 26.08.2026 gegen den Endpunkt geprueft: ein POST mit genau
-             diesen Feldern wird mit HTTP 200 und listId 295445000000035892
-             angenommen, auch ohne LASTNAME.
-
-             Double-Opt-in ist aktiv - Zoho antwortet "We have sent a confirmation
-             link to your email address". Nicht aus einer Einstellung gelesen,
-             sondern aus der Antwort des Endpunkts.
-             ================================================================ -->
-        <form method="POST" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" accept-charset="UTF-8">
-
-          <!-- Kontospezifische Zoho-Werte aus dem Formular "Lichttechnik Angebote"
-               (Zoho Campaigns, Liste Monatsangebot). Ohne Zohos optin.min.js: das
-               Skript ist ein Drittanbieter-Aufruf beim Seitenaufbau und wird fuer
-               einen POST nicht gebraucht. Der Besucher landet nach dem Absenden auf
-               Zohos Dankseite. -->
-          <input type="hidden" name="zc_formIx" value="3z0b8ed882fcff40629014f774b6a6577c84454f4e9f40f6c4933c756b33d2c5ee">
-          <input type="hidden" name="zcld" value="1419a1a983aadc34">
-          <input type="hidden" name="zctd" value="1419a1a983aac921">
-          <input type="hidden" name="zx" value="14af235f79">
-          <input type="hidden" name="zcvers" value="2.0">
-          <input type="hidden" name="mode" value="OptinCreateView">
-          <input type="hidden" name="submitType" value="optinCustomView">
-          <input type="hidden" name="formType" value="QuickForm">
-          <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
-          <input type="hidden" name="viewFrom" value="URL_ACTION">
-          <input type="hidden" name="oldListIds" value="">
-
+        <form method="POST" action="https://lichttechnik.werkflow.at/api/newsletter-anmeldung" accept-charset="UTF-8">
+          <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Firma-Website<input type="text" name="firma_web" tabindex="-1" autocomplete="off"></label></div>
           <div class="form-group">
             <label for="nl-firstname">Vorname</label>
-            <input type="text" id="nl-firstname" name="FIRSTNAME" placeholder="Für die persönliche Anrede (optional)" autocomplete="given-name">
+            <input type="text" id="nl-firstname" name="vorname" placeholder="Für die persönliche Anrede (optional)" autocomplete="given-name">
           </div>
           <div class="form-group">
             <label for="nl-email">E-Mail *</label>
-            <input type="email" id="nl-email" name="CONTACT_EMAIL" required placeholder="ihre@email.de" autocomplete="email" inputmode="email">
+            <input type="email" id="nl-email" name="email" required placeholder="ihre@email.de" autocomplete="email" inputmode="email">
           </div>
           <div class="form-check">
-            <input type="checkbox" id="nl-consent" required>
+            <input type="checkbox" id="nl-consent" name="einwilligung" value="1" required>
             <label for="nl-consent">Ich möchte die monatlichen Angebote per E-Mail erhalten. Mir ist bekannt, dass ich diese Einwilligung jederzeit widerrufen kann. Hinweise zur Verarbeitung in der <a href="datenschutz.html">Datenschutzerklärung</a>. *</label>
           </div>
           <button type="submit" class="btn btn-primary btn-block">
