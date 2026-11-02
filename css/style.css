@@ -358,10 +358,22 @@ a:focus-visible {
 }
 
 .hero-buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.hero-buttons .btn {
+  width: 100%;
   justify-content: center;
-  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Scroll indicator */
