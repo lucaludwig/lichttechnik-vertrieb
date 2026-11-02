@@ -1,0 +1,100 @@
+{
+  "monat": "2026-09",
+  "gueltigBis": "September 2026",
+  "produkte": [
+    {
+      "id": "led-deckenpanel-grundbeleuchtung",
+      "artikelnummer": "",
+      "titel": "LED-Deckenpanel Grundbeleuchtung",
+      "beschreibung": [
+        "216 W, 21.600 lm, Ra>70",
+        "4.000K neutralweiß oder 6.500K kaltweiß, 160° Abstrahlwinkel, IP20",
+        "208 cm – 75,00 €/Stück",
+        "516 cm – 133,00 €/Stück"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "208 cm",
+          "betrag": "75,00 €"
+        },
+        {
+          "bezeichnung": "516 cm",
+          "betrag": "133,00 €"
+        }
+      ],
+      "bild": "images/angebot-september-grundbeleuchtung.jpg"
+    },
+    {
+      "id": "garten-deko-kugel-granitfarben",
+      "artikelnummer": "",
+      "titel": "Garten-Deko-Kugel, granitfarben",
+      "beschreibung": [
+        "E27-Fassung, 2 m Anschlussleitung, Schuko-Stecker",
+        "Ø 250 mm – 23,50 €/St.",
+        "Ø 280 mm – 28,10 €/St.",
+        "Ø 380 mm – 37,60 €/St."
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "Ø 250 mm",
+          "betrag": "23,50 €"
+        },
+        {
+          "bezeichnung": "Ø 280 mm",
+          "betrag": "28,10 €"
+        },
+        {
+          "bezeichnung": "Ø 380 mm",
+          "betrag": "37,60 €"
+        }
+      ],
+      "bild": "images/angebot-september-dekokugel.jpg"
+    },
+    {
+      "id": "hausnummer-leuchte",
+      "artikelnummer": "",
+      "titel": "Hausnummer-Leuchte",
+      "beschreibung": [
+        "Polycarbonat, 5 / 7 / 10 W (bis 1.400 lm)",
+        "4.000K neutralweiß, einstellbarer Dämmerungssensor",
+        "inkl. Zahlen- und Buchstabenaufkleber"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "25,80 €"
+        }
+      ],
+      "bild": "images/angebot-september-hausnummerleuchte.png"
+    },
+    {
+      "id": "led-flutlichtstrahler",
+      "artikelnummer": "",
+      "titel": "LED-Flutlichtstrahler",
+      "beschreibung": [
+        "50 / 100 / 200 W, 100 lm/W, IP65",
+        "Lichtfarbe einstellbar 3.000 / 4.000 / 6.000 K, 110° Öffnungswinkel",
+        "50 W – 23,00 €/St. · 100 W – 32,00 €/St. · 200 W – 76,00 €/St."
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "50 W",
+          "betrag": "23,00 €"
+        },
+        {
+          "bezeichnung": "100 W",
+          "betrag": "32,00 €"
+        },
+        {
+          "bezeichnung": "200 W",
+          "betrag": "76,00 €"
+        }
+      ],
+      "bild": "images/angebot-september-flutlicht.png"
+    }
+  ]
+}

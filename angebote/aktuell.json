@@ -1,0 +1,226 @@
+{
+  "monat": "2026-11",
+  "gueltigBis": "November 2026",
+  "produkte": [
+    {
+      "id": "6400-niv",
+      "artikelnummer": "6400-NIV",
+      "titel": "6400-NIV",
+      "beschreibung": [
+        "Superflache Anbauleuchte weiß oder schwarz, Gehäuse und Haube aus Kunststoff",
+        "Durchmesser 225/300/420 mm · Aufbauhöhe 28 mm",
+        "1.200 bis 3.200 lm, Lichtfarben 3.000/4.000/6.000 K einstellbar, Ra>80, 115° Abstrahlwinkel, IP54",
+        "für überdachte Außenanwendungen geeignet",
+        "12 W: 10,50 €/Stück · 24 W: 14,50 €/Stück · 32 W: 22,50 €/Stück"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "12 W",
+          "betrag": "10,50 €"
+        },
+        {
+          "bezeichnung": "24 W",
+          "betrag": "14,50 €"
+        },
+        {
+          "bezeichnung": "32 W",
+          "betrag": "22,50 €"
+        }
+      ],
+      "bild": "images/newsletter-november-p1.jpg",
+      "gruppe": "Anbau- und Einlegeleuchten",
+      "startseite": true
+    },
+    {
+      "id": "6400-1-ph-sch",
+      "artikelnummer": "6400-1-PH-SCH",
+      "titel": "6400-1-PH-SCH",
+      "beschreibung": [
+        "1-Phasen-Stromschiene 1 m mit 4 Strahlern GU10, schwarz oder weiß",
+        "Einspeisung und Endstück Gehäuse Aluminium, IP20, ohne Leuchtmittel",
+        "Breite 35 mm · Höhe ohne Strahler 25 mm · Strahler Ø 55 mm, Länge 150 mm",
+        "Schiene verlängerbar mit Verbinder (1 €/Stück)"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "komplett mit Strahlern",
+          "betrag": "30,00 €"
+        }
+      ],
+      "bild": "images/newsletter-november-p2.jpg",
+      "gruppe": "Stromschienen und Strahler",
+      "startseite": true
+    },
+    {
+      "id": "6400-gu10-7w",
+      "artikelnummer": "6400-GU10-7W",
+      "titel": "6400-GU10-7W",
+      "beschreibung": [
+        "GU10-Leuchtmittel 7 W, Ø 51 mm, 230 V AC",
+        "Lichtfarben 3.000, 4.000 oder 6.000 K (bei Bestellung angeben), Ra>80",
+        "Standard: 600 lm, opale Streuscheibe, 120° Abstrahlwinkel: 1,60 €/Stück",
+        "Premium: 630 lm, facettierter Linsendiffusor, 80° Abstrahlwinkel: 2,10 €/Stück"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "Standard",
+          "betrag": "1,60 €"
+        },
+        {
+          "bezeichnung": "Premium",
+          "betrag": "2,10 €"
+        }
+      ],
+      "bild": "images/newsletter-november-p3.jpg",
+      "gruppe": "Leuchtmittel und Außenleuchte"
+    },
+    {
+      "id": "5022-nex-cct-schiene",
+      "artikelnummer": "5022-NEX-CCT",
+      "titel": "5022-NEX-CCT",
+      "beschreibung": [
+        "3-Phasen-Schienenstrahler, Gehäuse Aluminium weiß oder schwarz",
+        "Leistung 10-20 W einstellbar, 1.800 lm, Lichtfarben 3.000/4.000/5.000 K einstellbar",
+        "Ra>90, 36° Abstrahlwinkel, IP20",
+        "Ø 60 mm · Länge 115 mm · Aufbauhöhe 197 mm"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "22,55 €"
+        }
+      ],
+      "bild": "images/newsletter-november-p5.jpg",
+      "gruppe": "Stromschienen und Strahler"
+    },
+    {
+      "id": "5008-bx3",
+      "artikelnummer": "5008-BX3",
+      "titel": "5008-BX3",
+      "beschreibung": [
+        "3-Phasen-Stromschienenstrahler 30 W, weiß oder schwarz",
+        "Gehäuse Aluminium, Philips LED 30 W, 4.100 lm",
+        "Lichtfarbe einstellbar von 2.700 bis 6.000 K, Ra=95, 36° Abstrahlwinkel, IP20, 230 V AC",
+        "Ø 70 mm · Länge 150 mm · Aufbauhöhe 120 mm"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "37,60 €"
+        }
+      ],
+      "bild": "images/newsletter-november-p6.jpg",
+      "gruppe": "Stromschienen und Strahler",
+      "startseite": true
+    },
+    {
+      "id": "5800-epi-schwarz",
+      "artikelnummer": "5800-EPI-schwarz",
+      "titel": "5800-EPI-schwarz",
+      "beschreibung": [
+        "3-Phasen-Stromschienenstrahler 12 W, Gehäuse Aluminium, schwarz",
+        "12 Epistar LEDs, dimmbar, einstellbar von 2.700 bis 6.000 K, CRI>90",
+        "24° Abstrahlwinkel, IP20, 230 V AC",
+        "Länge 220 mm · Breite 22 mm · Höhe 145 mm"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "57,35 €"
+        }
+      ],
+      "bild": "images/newsletter-november-p7.jpg",
+      "gruppe": "Stromschienen und Strahler"
+    },
+    {
+      "id": "6100-lpso-36w",
+      "artikelnummer": "6100-LPSO-36W",
+      "titel": "6100-LPSO-36W",
+      "beschreibung": [
+        "Einlege-Panel-Leuchte 622 x 622 mm, opale Streuscheibe",
+        "36 W, 4.860 lm, Lichtfarben 3.000 oder 4.000 K (bei Bestellung angeben)",
+        "UGR>22, Ra>80, 120° Abstrahlwinkel, IP20, 230 V AC"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "29,70 €"
+        }
+      ],
+      "bild": "images/newsletter-november-p8.jpg",
+      "gruppe": "Anbau- und Einlegeleuchten",
+      "startseite": true
+    },
+    {
+      "id": "5022-nex-cct-panel",
+      "artikelnummer": "5022-NEX-CCT",
+      "titel": "5022-NEX-CCT",
+      "beschreibung": [
+        "Einlege-Panel-Leuchte 622 x 622 mm, microprismatische Streuscheibe, blendfrei",
+        "für Bildschirmarbeitsplätze geeignet, 4.000 K neutralweiß",
+        "36 W, 4.860 lm, UGR>19, Ra>80, 120° Abstrahlwinkel, IP20, 230 V AC"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "35,25 €"
+        }
+      ],
+      "bild": "images/newsletter-november-p8.jpg",
+      "gruppe": "Anbau- und Einlegeleuchten"
+    },
+    {
+      "id": "hausnummer-leuchte",
+      "artikelnummer": "",
+      "titel": "Hausnummer-Leuchte",
+      "beschreibung": [
+        "Polycarbonat, 5 / 7 / 10 W (bis 1.400 lm)",
+        "4.000K neutralweiß, einstellbarer Dämmerungssensor",
+        "inkl. Zahlen- und Buchstabenaufkleber"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "25,80 €"
+        }
+      ],
+      "bild": "images/angebot-september-hausnummerleuchte.png",
+      "gruppe": "Leuchtmittel und Außenleuchte",
+      "herkunft": "September"
+    },
+    {
+      "id": "led-deckenpanel-grundbeleuchtung",
+      "artikelnummer": "",
+      "titel": "LED-Deckenpanel Grundbeleuchtung",
+      "beschreibung": [
+        "216 W, 21.600 lm, Ra>70",
+        "4.000K neutralweiß oder 6.500K kaltweiß, 160° Abstrahlwinkel, IP20",
+        "208 cm – 75,00 €/Stück",
+        "516 cm – 133,00 €/Stück"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "208 cm",
+          "betrag": "75,00 €"
+        },
+        {
+          "bezeichnung": "516 cm",
+          "betrag": "133,00 €"
+        }
+      ],
+      "bild": "images/angebot-september-grundbeleuchtung.jpg",
+      "gruppe": "Anbau- und Einlegeleuchten",
+      "herkunft": "September"
+    }
+  ]
+}

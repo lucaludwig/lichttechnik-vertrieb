@@ -1,0 +1,169 @@
+{
+  "monat": "2026-10",
+  "gueltigBis": "Oktober 2026",
+  "produkte": [
+    {
+      "id": "5050-nex-w",
+      "artikelnummer": "5050-NEX-w",
+      "titel": "5050-NEX-w",
+      "beschreibung": [
+        "Gehäuse Aluminium weiß",
+        "20 W · 1.800 lm",
+        "warmweiß 3.000 K oder neutralweiß 4.000 K",
+        "Ra>80 · 60° Abstrahlwinkel · IP20"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "19,50 €"
+        }
+      ],
+      "bild": "images/newsletter-oktober-p1.jpg"
+    },
+    {
+      "id": "5050-vul",
+      "artikelnummer": "5050-VUL",
+      "titel": "5050-VUL",
+      "beschreibung": [
+        "Gehäuse Aluminium, schwarz (s) oder weiß (w)",
+        "30 W · 3.000 lm",
+        "warmweiß 3.000 K oder neutralweiß 4.000 K",
+        "Ra>80 · 30° Abstrahlwinkel · IP20"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "28,50 €"
+        }
+      ],
+      "bild": "images/newsletter-oktober-p2.jpg"
+    },
+    {
+      "id": "5050-onu-20",
+      "artikelnummer": "5050-ONU 20",
+      "titel": "5050-ONU 20",
+      "beschreibung": [
+        "Gehäuse Aluminium, schwarz (s) oder weiß (w)",
+        "20 W · 2.480 lm",
+        "warmweiß 3.000 K bis Tageslicht 6.000 K einstellbar",
+        "Ra>90 · 30° Abstrahlwinkel · IP20"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "35,50 €"
+        }
+      ],
+      "bild": "images/newsletter-oktober-p3.jpg",
+      "hinweise": [
+        "Nur für Schienen GLOBAL, 5013-SCH-IN und UNIPRO"
+      ]
+    },
+    {
+      "id": "5050-onu-30",
+      "artikelnummer": "5050-ONU 30",
+      "titel": "5050-ONU 30",
+      "beschreibung": [
+        "Gehäuse Aluminium, schwarz (s) oder weiß (w)",
+        "30 W · 4.000 lm",
+        "warmweiß 3.000 K bis Tageslicht 6.000 K einstellbar",
+        "Ra>90 · 30° Abstrahlwinkel · IP20"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "39,50 €"
+        }
+      ],
+      "bild": "images/newsletter-oktober-p4.jpg",
+      "hinweise": [
+        "Nur für Schienen GLOBAL, 5013-SCH-IN und UNIPRO"
+      ]
+    },
+    {
+      "id": "5013-cur",
+      "artikelnummer": "5013-CUR",
+      "titel": "5013-CUR",
+      "beschreibung": [
+        "Herausschwenkbarer und drehbarer Einbaustrahler",
+        "Deckenausschnitt 162 mm · Abdeckung 172 mm",
+        "mit Überstandring: Abdeckung 215 mm",
+        "Aluminium, 1.000 bis 6.000 lm, alle Lichtfarben, Ra>90, IP20, schwarz (s) oder weiß (w)"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "117,85–141,00 €"
+        }
+      ],
+      "bild": "images/newsletter-oktober-p5.jpg"
+    },
+    {
+      "id": "5013-gir",
+      "artikelnummer": "5013-GIR",
+      "titel": "5013-GIR",
+      "beschreibung": [
+        "Kardanisch schwenkbarer und drehbarer Einbaustrahler",
+        "Deckenausschnitt 170 mm · Abdeckung 180 mm",
+        "mit separatem Überstandring: Abdeckung 230 mm",
+        "Aluminium, 1.000 bis 6.000 lm, alle Lichtfarben, Ra>90, IP20, schwarz (s), grau (g) oder weiß (w)"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "117,85–141,00 €"
+        }
+      ],
+      "bild": "images/newsletter-oktober-p6.jpg"
+    },
+    {
+      "id": "5050-gio",
+      "artikelnummer": "5050-GIO",
+      "titel": "5050-GIO",
+      "beschreibung": [
+        "Einbaudownlight",
+        "Deckenausschnitt 170/190/215 mm · Abdeckung 180/206/226 mm",
+        "mit Überstandring: Abdeckung 230/266 mm",
+        "Aluminium, 1.000 bis 6.000 lm, alle Lichtfarben, Ra>90, 70° Abstrahlwinkel, IP20 oder IP44, schwarz (s) oder weiß (w)"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "",
+          "betrag": "117,85–141,00 €"
+        }
+      ],
+      "bild": "images/newsletter-oktober-p7.jpg"
+    },
+    {
+      "id": "5022-flex",
+      "artikelnummer": "5022-FLEX",
+      "titel": "5022-FLEX",
+      "beschreibung": [
+        "Einbaudownlight, Kunststoff weiß",
+        "Deckenausschnitt 80-160 mm und 120-200 mm einstellbar · Abdeckung 180 oder 220 mm",
+        "Einbautiefe 35 mm · Aufbauhöhe 22 mm",
+        "7/13 W oder 13/18 W, 720 bis 2.000 lm, 3.000/4.000/6.000 K einstellbar, Ra>80, 120°, IP44",
+        "13/18 W: 20,85 €"
+      ],
+      "masse": [],
+      "preise": [
+        {
+          "bezeichnung": "7/13 W",
+          "betrag": "14,20 €"
+        },
+        {
+          "bezeichnung": "13/18 W",
+          "betrag": "20,85 €"
+        }
+      ],
+      "bild": "images/newsletter-oktober-p8.jpg"
+    }
+  ]
+}
