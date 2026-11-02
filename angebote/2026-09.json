@@ -3,27 +3,30 @@
   "gueltigBis": "September 2026",
   "produkte": [
     {
-      "id": "led-deckenpanel-grundbeleuchtung",
+      "id": "led-flutlichtstrahler",
       "artikelnummer": "",
-      "titel": "LED-Deckenpanel Grundbeleuchtung",
+      "titel": "LED-Flutlichtstrahler",
       "beschreibung": [
-        "216 W, 21.600 lm, Ra>70",
-        "4.000K neutralweiß oder 6.500K kaltweiß, 160° Abstrahlwinkel, IP20",
-        "208 cm – 75,00 €/Stück",
-        "516 cm – 133,00 €/Stück"
+        "50 / 100 / 200 W, 100 lm/W, IP65",
+        "Lichtfarbe einstellbar 3.000 / 4.000 / 6.000 K, 110° Öffnungswinkel",
+        "50 W – 23,00 €/St. · 100 W – 32,00 €/St. · 200 W – 76,00 €/St."
       ],
       "masse": [],
       "preise": [
         {
-          "bezeichnung": "208 cm",
-          "betrag": "75,00 €"
+          "bezeichnung": "50 W",
+          "betrag": "23,00 €"
         },
         {
-          "bezeichnung": "516 cm",
-          "betrag": "133,00 €"
+          "bezeichnung": "100 W",
+          "betrag": "32,00 €"
+        },
+        {
+          "bezeichnung": "200 W",
+          "betrag": "76,00 €"
         }
       ],
-      "bild": "images/angebot-september-grundbeleuchtung.jpg"
+      "bild": "images/angebot-september-flutlicht.png"
     },
     {
       "id": "garten-deko-kugel-granitfarben",
@@ -71,30 +74,27 @@
       "bild": "images/angebot-september-hausnummerleuchte.png"
     },
     {
-      "id": "led-flutlichtstrahler",
+      "id": "led-deckenpanel-grundbeleuchtung",
       "artikelnummer": "",
-      "titel": "LED-Flutlichtstrahler",
+      "titel": "LED-Deckenpanel Grundbeleuchtung",
       "beschreibung": [
-        "50 / 100 / 200 W, 100 lm/W, IP65",
-        "Lichtfarbe einstellbar 3.000 / 4.000 / 6.000 K, 110° Öffnungswinkel",
-        "50 W – 23,00 €/St. · 100 W – 32,00 €/St. · 200 W – 76,00 €/St."
+        "216 W, 21.600 lm, Ra>70",
+        "4.000K neutralweiß oder 6.500K kaltweiß, 160° Abstrahlwinkel, IP20",
+        "208 cm – 75,00 €/Stück",
+        "516 cm – 133,00 €/Stück"
       ],
       "masse": [],
       "preise": [
         {
-          "bezeichnung": "50 W",
-          "betrag": "23,00 €"
+          "bezeichnung": "208 cm",
+          "betrag": "75,00 €"
         },
         {
-          "bezeichnung": "100 W",
-          "betrag": "32,00 €"
-        },
-        {
-          "bezeichnung": "200 W",
-          "betrag": "76,00 €"
+          "bezeichnung": "516 cm",
+          "betrag": "133,00 €"
         }
       ],
-      "bild": "images/angebot-september-flutlicht.png"
+      "bild": "images/angebot-september-grundbeleuchtung.jpg"
     }
   ]
 }
