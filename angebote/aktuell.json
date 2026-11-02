@@ -222,5 +222,13 @@
       "bild": "images/angebot-september-grundbeleuchtung.jpg",
       "herkunft": "September"
     }
-  ]
+  ],
+  "newsletter": {
+    "betreff": "Angebot des Monats November – Bringen Sie Ihre Verkaufsflächen zum Strahlen!",
+    "einleitung": [
+      "Guten Tag,",
+      "Die Tage werden kürzer und die dunklen Stunden nehmen zu. Jetzt ist die richtige Beleuchtung besonders wichtig: Sie schafft Sicherheit und Atmosphäre, setzt Produkte und Verkaufsflächen optimal in Szene und kann so den Umsatz positiv beeinflussen.",
+      "Damit Sie bestens für die dunkle Jahreszeit gerüstet sind, haben wir attraktive Angebote für Sie zusammengestellt. So können Sie Ihre Beleuchtung schnell, unkompliziert und kostengünstig nachrüsten."
+    ]
+  }
 }
