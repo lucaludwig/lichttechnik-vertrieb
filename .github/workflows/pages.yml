@@ -15,10 +15,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Upload und Deploy in getrennten Jobs: deploy-pages fand das Artefakt im selben
+  # Job zeitweise nicht ("No artifacts named github-pages"), der Jobwechsel gibt
+  # der Artefakt-API die noetige Zeit.
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,5 +26,12 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
