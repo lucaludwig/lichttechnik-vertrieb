@@ -197,7 +197,7 @@ body {
 }
 
 /* Mobile Navigation */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .hamburger {
     display: flex;
   }
@@ -2491,7 +2491,7 @@ p { text-wrap: pretty; }
 .nav-links a::after { bottom: -6px; height: 1px; background: var(--accent); }
 .nav-cta { border-radius: var(--radius); padding: 0.55rem 1.1rem; }
 .nav-cta:hover { transform: none; }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .nav-links { background: var(--primary-dark); backdrop-filter: none; -webkit-backdrop-filter: none; border-top: 1px solid rgba(255, 255, 255, 0.08); }
 }
 
@@ -2985,7 +2985,7 @@ html { background: #0b0e12; }
 .angebot-badge.ist-gleich { display: none; }
 
 /* Mobile-Menü: Kontakt als vollwertiger Knopf */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .nav-links .nav-cta { display: inline-block; padding: 0.75rem 2rem; }
 }
 
@@ -3024,3 +3024,47 @@ html { background: #0b0e12; }
 h1 + p { max-width: 36rem; }
 .umruestung-weg-details li { max-width: 32rem; }
 li, figcaption, dd { text-wrap: pretty; }
+
+/* Hero V2: Nutzen, eine Hauptaktion, Person, Referenzen */
+#referenzen{scroll-margin-top:80px}
+.hero-v2{flex-direction:column;justify-content:center;min-height:min(100vh,860px);padding:7rem 1.5rem 0}
+.hero-v2 .hero-bg{background-image:url('../images/hero-buero.webp')}
+.hero-v2 .hero-overlay{background:linear-gradient(90deg,rgba(13,17,23,.94) 0%,rgba(13,17,23,.82) 50%,rgba(13,17,23,.55) 100%)}
+.hv2-grid{position:relative;z-index:10;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:4rem;align-items:center;max-width:1160px;width:100%;margin-inline:auto;color:#fff}
+.hv2-eyebrow{font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem}
+.hv2-text h1{font-size:clamp(2.3rem,4.6vw,4rem);font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-bottom:1.5rem;text-wrap:balance}
+.hv2-text h1 .accent{color:var(--accent)}
+.hv2-lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:rgba(255,255,255,.82);max-width:38rem;margin-bottom:2rem;text-wrap:pretty}
+.hv2-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.75rem}
+.hv2-actions .btn{justify-content:center;text-align:center;padding:1.05rem 2rem;font-size:1.05rem}
+.hv2-tel{color:rgba(255,255,255,.85);text-decoration:none;font-size:1.05rem}
+.hv2-tel strong{color:#fff;border-bottom:1px solid rgba(255,255,255,.4)}
+.hv2-micro{margin-top:1rem;font-size:.9rem;color:rgba(255,255,255,.6)}
+.hv2-person{margin:0;background:rgba(13,17,23,.78);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:.75rem}
+.hv2-person img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:2px}
+.hv2-person figcaption{padding:.9rem .25rem .25rem;display:grid;gap:.2rem}
+.hv2-person figcaption strong{font-size:1.05rem}
+.hv2-person figcaption span{font-size:.85rem;color:rgba(255,255,255,.65)}
+.hv2-refs{position:relative;z-index:10;width:100%;max-width:1160px;margin:4rem auto 0;padding:1.5rem 0 2rem;border-top:1px solid rgba(255,255,255,.14);display:flex;gap:1.5rem;align-items:baseline;color:#fff}
+.hv2-refs-label{flex:none;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.hv2-refs ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;font-weight:600;font-size:.98rem;color:rgba(255,255,255,.88)}
+@media (max-width:860px){
+ .hero-v2{padding:6.5rem 1.25rem 0;min-height:auto}
+ .hero-v2 .hero-bg{background-image:url('../images/hero-buero-mobil.webp')}
+ .hv2-grid{grid-template-columns:1fr;gap:2rem}
+ .hv2-eyebrow{display:none}
+ .hero-v2 .hero-overlay{background:rgba(13,17,23,.82)}
+ .hv2-person{display:grid;grid-template-columns:72px 1fr;gap:.9rem;align-items:center;padding:.6rem;order:-1}
+ .hv2-person img{aspect-ratio:1;border-radius:50%}
+ .hv2-person figcaption{padding:0}
+ .hv2-actions{flex-direction:column;align-items:stretch;text-align:center}
+ .hv2-refs{flex-direction:column;gap:.75rem;margin-top:2.5rem}
+ .hv2-refs ul{gap:.35rem 1.25rem;font-size:.92rem}
+}
+
+/* Navigation: Licht-Check-Button bleibt einzeilig, Tablet-Breite enger */
+.nav-links a { white-space: nowrap; }
+@media (min-width: 1001px) and (max-width: 1120px) {
+  .nav-links { gap: 1.1rem; }
+  .nav-links a { font-size: 0.85rem; }
+}
