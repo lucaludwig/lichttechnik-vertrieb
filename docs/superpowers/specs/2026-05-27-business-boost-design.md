@@ -131,7 +131,7 @@ New:
 - Icon: WhatsApp SVG (white on green circle)
 - Size: 56px circle
 - Position: `fixed`, `bottom: 24px`, `right: 24px` (desktop), adjusted on mobile to not overlap sticky CTA
-- Link: `https://wa.me/4961046683115?text=Hallo,%20ich%20interessiere%20mich%20für%20eine%20Beratung.`
+- Link: `https://wa.me/4915154854865?text=Hallo,%20ich%20interessiere%20mich%20für%20eine%20Beratung.`
 - Hover: slight scale-up + shadow
 - Mobile: `bottom: 80px` (above sticky CTA bar) on pages that have the sticky CTA
 - Mobile: `bottom: 24px` on pages without sticky CTA (kontakt, legal pages)

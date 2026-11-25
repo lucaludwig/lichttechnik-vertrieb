@@ -193,3 +193,44 @@ document.addEventListener('DOMContentLoaded', () => {
     if (kopfMitTag && badges.every((b) => b.textContent.trim() === text)) badges.forEach((b) => b.classList.add('ist-gleich'));
   });
 });
+
+// Feinsatz: Umbrüche nur an sinnvollen Stellen (läuft nur im DOM, Quelltext und JSON-LD bleiben unverändert)
+document.addEventListener('DOMContentLoaded', () => {
+  const NBSP = ' ';
+  const WJ = '⁠'; // Wortverbinder: kein Umbruch nach dem Bindestrich
+  const regeln = [
+    [/ - /g, NBSP + '- '], // Gedankenstrich hängt am vorigen Wort, beginnt nie eine Zeile
+    [/(^|[\s(„])([A-ZÄÖÜ0-9][A-Za-z0-9]{0,3})-(?=[A-Za-zÄÖÜäöü0-9])/g, `$1$2-${WJ}`], // LED-Treiber, DIN-zertifiziert, 3D-Planung, E-Mail
+    [/(\d) (?=[A-Za-zÄÖÜäöü%€°])/g, `$1${NBSP}`], // 35 Jahren, 100 Schaltzyklen, 5 Watt
+    [/\b(Ra|PF|Nr\.|ca\.|bis|von|über|zu|mit) (?=\d)/g, `$1${NBSP}`], // Ra 80, über 35
+    [/([.?!]) ([^\s]{1,20}) (?=\S)/g, `$1 $2${NBSP}`], // Satzanfang steht nie allein am Zeilenende
+    [/: ([^\s]{1,8}) (?=\S)/g, `: $1${NBSP}`], // nach Doppelpunkt ebenso, bei kurzen Wörtern
+    [/([.?!] [^\s]{1,20})\s+$/, `$1${NBSP}`], // auch wenn danach ein <strong> oder Link folgt
+  ];
+  const auslassen = 'script,style,textarea,input,select,code,pre,svg';
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => (n.parentElement.closest(auslassen) || !n.data.trim() ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
+  });
+  const knoten = [];
+  while (walker.nextNode()) knoten.push(walker.currentNode);
+  const block = (n) => n.parentElement.closest('p, li, h1, h2, h3, h4, dd, td, figcaption, a, button');
+  knoten.forEach((n, i) => {
+    let t = n.data;
+    regeln.forEach(([re, ersatz]) => { t = t.replace(re, ersatz); });
+    // Satz endet im vorigen Textstück (z. B. in <strong>): erstes Wort hier an das zweite binden
+    const vorher = knoten[i - 1];
+    if (vorher && block(vorher) === block(n) && /[.?!]\s*$/.test(vorher.data)) t = t.replace(/^(\s*[^\s]{1,20}) (?=\S)/, `$1${NBSP}`);
+    if (t !== n.data) n.data = t;
+  });
+  // Kein kurzes Einzelwort in der letzten Zeile von Überschriften und Absätzen
+  document.querySelectorAll('h1, h2, h3, h4, p, li, figcaption').forEach((el) => {
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let letzter = null;
+    while (w.nextNode()) if (w.currentNode.data.trim()) letzter = w.currentNode;
+    const woerter = el.textContent.trim().split(/\s+/).length;
+    if (!letzter || woerter < 2) return;
+    // nur wenn die letzten zwei Wörter zusammen kurz genug für jede Zeilenbreite bleiben
+    letzter.data = letzter.data.replace(/(^|\s)(\S+) (\S{1,10})(\s*)$/, (m, a, vor, wort, rest) =>
+      ((vor.length + wort.length <= 16 && woerter >= 3) || wort.length <= 4 ? `${a}${vor}${NBSP}${wort}${rest}` : m));
+  });
+});
