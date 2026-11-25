@@ -7,6 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="description" content="LED verständlich erklärt: Was bedeuten Lumen, Kelvin, CRI und Ra-Wert? Alles über Lichtfarbe, Farbwiedergabe und Lichtqualität - praxisnah vom Lichttechniker.">
   <title>LED: Lichtfarbe, Qualität und Farbwiedergabe | Lichttechnik und Vertrieb</title>
+  <link rel="preload" href="../../fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="icon" type="image/png" href="../../images/logo.png">
   <link rel="canonical" href="https://lichttechnik-vertrieb.de/lichtwissen/led-lichtfarbe/">
@@ -88,7 +89,7 @@
     /* ponytail: einmalige Kelvin-Skala, bewusst nicht in style.css */
     .kelvin-scale { margin-top: 1.5rem; }
     .kelvin-scale-bar { height: 14px; border-radius: 7px; background: linear-gradient(to right, #ff9d3c 0%, #ffd9a0 30%, #fdf6e3 55%, #e8f0fe 78%, #cfe0ff 100%); }
-    .kelvin-scale-labels { display: flex; justify-content: space-between; font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; }
+    .kelvin-scale-labels { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem; }
     .kelvin-scale-labels strong { display: block; color: #111827; }
     /* Bilder im Original-Seitenverhältnis zeigen statt 4/3-Zuschnitt */
     .about-image.is-square { aspect-ratio: 1/1; }
@@ -109,12 +110,10 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="../../index.html">Startseite</a></li>
-        <li><a href="../../uber-uns.html">Unternehmen</a></li>
         <li><a href="../../produkte.html">Produkte</a></li>
-        <li><a href="../../angebote.html">Angebote</a></li>
         <li><a href="../../beleuchtungsplanung.html">3D-Planung</a></li>
-        <li><a href="../">Lichtwissen</a></li>
+        <li><a href="../../angebote.html">Angebote</a></li>
+        <li><a href="../../uber-uns.html">Unternehmen</a></li>
         <li><a href="../../kontakt.html" class="nav-cta">Kontakt</a></li>
       </ul>
     </div>
@@ -419,19 +418,19 @@
     <div class="container">
       <div class="stats-strip-items fade-in">
         <div class="stats-strip-item">
-          <div class="trust-number" data-target="90">0</div>
+          <div class="trust-number">90</div>
           <div class="stats-strip-label">Empfohlener Ra-Wert für Wohnräume</div>
         </div>
         <div class="stats-strip-item">
-          <div class="trust-number" data-target="3000">0</div>
+          <div class="trust-number">3.000</div>
           <div class="stats-strip-label">Kelvin - ideale Abendtemperatur</div>
         </div>
         <div class="stats-strip-item">
-          <div class="trust-number" data-target="50000">0</div>
+          <div class="trust-number">50.000</div>
           <div class="stats-strip-label">Stunden Lebensdauer bei Premium-LEDs</div>
         </div>
         <div class="stats-strip-item">
-          <div class="trust-number" data-target="80">0</div>
+          <div class="trust-number">80</div>
           <div class="stats-strip-label">Prozent Energieeinsparung gegenüber Glühlampen</div>
         </div>
       </div>

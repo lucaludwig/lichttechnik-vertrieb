@@ -160,3 +160,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+// Angebotskarten: erst drei Eckdaten, Rest auf Wunsch (Portal-Markup bleibt unverändert)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.angebot-card').forEach((card, i) => {
+    const list = card.querySelector('.angebot-specs');
+    if (!list || list.children.length <= 3) return;
+    if (!list.id) list.id = `angebot-specs-${i}`;
+    card.classList.add('ist-kompakt');
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'angebot-mehr';
+    btn.setAttribute('aria-controls', list.id);
+    btn.setAttribute('aria-expanded', 'false');
+    btn.textContent = 'Alle Details';
+    btn.addEventListener('click', () => {
+      const offen = card.classList.toggle('ist-offen');
+      btn.setAttribute('aria-expanded', String(offen));
+      btn.textContent = offen ? 'Weniger Details' : 'Alle Details';
+    });
+    list.after(btn);
+  });
+});
+
+// Steht über dem Raster schon ein Tag, wiederholt ein überall gleiches Badge nur: ausblenden
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.angebote-grid').forEach((grid) => {
+    const badges = [...grid.querySelectorAll('.angebot-badge')];
+    if (badges.length < 2) return;
+    const text = badges[0].textContent.trim();
+    const kopfMitTag = grid.previousElementSibling?.matches('.section-header') && grid.previousElementSibling.querySelector('.section-label');
+    if (kopfMitTag && badges.every((b) => b.textContent.trim() === text)) badges.forEach((b) => b.classList.add('ist-gleich'));
+  });
+});
