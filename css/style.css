@@ -2538,21 +2538,6 @@ p { text-wrap: pretty; }
   margin: 0;
 }
 .hero-buttons .btn { width: auto; }
-.hero-links {
-  list-style: none;
-  display: flex;
-  gap: 1.75rem;
-  margin-top: 1.75rem;
-  font-size: 0.9375rem;
-}
-.hero-links a {
-  color: rgba(255, 255, 255, 0.78);
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.35);
-  text-underline-offset: 0.3em;
-  transition: color 0.2s, text-decoration-color 0.2s;
-}
-.hero-links a:hover { color: #fff; text-decoration-color: var(--accent); }
 .scroll-indicator, .hero-badge { display: none; }
 @media (max-width: 700px) {
   .hero { min-height: 100svh; }
@@ -2983,7 +2968,6 @@ html { background: #0b0e12; }
 
 /* Überschriften-Hierarchie: h3 statt h4, gleiche Optik */
 .contact-info-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
-.hero-links a { color: rgba(255, 255, 255, 0.92); text-decoration-color: rgba(255, 255, 255, 0.5); }
 
 /* Kontrast und Ebenen */
 .umruestung-label-neu { color: #6b4f00; }
@@ -2995,5 +2979,8 @@ html { background: #0b0e12; }
 .angebot-card-body .angebot-price { margin-top: auto; padding-top: 1rem; }
 .angebot-card-body .angebot-mehr { align-self: flex-start; }
 .angebot-badge.ist-gleich { display: none; }
-.hero .hero-links a { color: rgba(255, 255, 255, 0.92); text-decoration-color: rgba(255, 255, 255, 0.5); text-decoration-thickness: 1px; }
-.hero .hero-links a:hover { color: #fff; text-decoration-color: var(--accent); }
+
+/* Mobile-Menü: Kontakt als vollwertiger Knopf */
+@media (max-width: 768px) {
+  .nav-links .nav-cta { display: inline-block; padding: 0.75rem 2rem; }
+}
