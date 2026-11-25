@@ -2995,3 +2995,5 @@ html { background: #0b0e12; }
 .angebot-card-body .angebot-price { margin-top: auto; padding-top: 1rem; }
 .angebot-card-body .angebot-mehr { align-self: flex-start; }
 .angebot-badge.ist-gleich { display: none; }
+.hero .hero-links a { color: rgba(255, 255, 255, 0.92); text-decoration-color: rgba(255, 255, 255, 0.5); text-decoration-thickness: 1px; }
+.hero .hero-links a:hover { color: #fff; text-decoration-color: var(--accent); }
