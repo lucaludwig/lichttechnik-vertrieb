@@ -3068,3 +3068,6 @@ li, figcaption, dd { text-wrap: pretty; }
   .nav-links { gap: 1.1rem; }
   .nav-links a { font-size: 0.85rem; }
 }
+
+/* Hero V2: Hintergrund beruhigen, Foto nur als Lichtstimmung */
+.hero-v2 .hero-bg { filter: blur(10px) saturate(0.7); transform: scale(1.06); opacity: 0.45; }
