@@ -958,6 +958,10 @@ a:focus-visible {
   transition: transform 0.5s;
 }
 
+.project-card-detailed .project-image img.focus-top {
+  object-position: center top;
+}
+
 .project-card:hover img {
   transform: scale(1.05);
 }
