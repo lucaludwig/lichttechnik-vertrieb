@@ -3036,8 +3036,8 @@ li, figcaption, dd { text-wrap: pretty; }
 
 
 /* Ueber uns: Portraet als ruhiges Studiofoto im Seitenraster */
-.about-image--portrait { aspect-ratio: 4 / 5; }
-.about-image--portrait img { height: 100%; object-fit: cover; object-position: 50% 20%; }
+.about-image--portrait { aspect-ratio: 1 / 1; }
+.about-image--portrait img { height: 100%; object-fit: cover; object-position: 50% 50%; }
 
 /* DIN-Pruefzeichen: einfarbige Maske statt Bild mit weissem Kasten */
 .din-mark {
