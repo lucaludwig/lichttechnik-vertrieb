@@ -3034,3 +3034,20 @@ li, figcaption, dd { text-wrap: pretty; }
   .nav-links a { font-size: 0.85rem; }
 }
 
+
+/* Ueber uns: freigestelltes Portraet vor Lichtverlauf */
+.about-image--portrait {
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background:
+    radial-gradient(55% 42% at 56% 34%, rgba(246, 184, 0, 0.24), transparent 72%),
+    linear-gradient(180deg, var(--bg-alt) 0%, #e7e3da 100%);
+}
+.about-image--portrait img {
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
