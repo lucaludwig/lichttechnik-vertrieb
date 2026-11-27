@@ -88,8 +88,8 @@
   <style>
     /* ponytail: Vergleichstabelle nur für diesen Artikel */
     .dimm-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.95rem; }
-    .dimm-table th, .dimm-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
-    .dimm-table th { background: #f9fafb; color: #374151; font-weight: 600; }
+    .dimm-table th, .dimm-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--line); }
+    .dimm-table th { background: transparent; color: var(--text); font-weight: 650; border-bottom: 2px solid var(--primary-dark); }
     .dimm-table tr:last-child td { border-bottom: none; }
     @media (max-width: 640px) { .dimm-table { font-size: 0.85rem; } .dimm-table th, .dimm-table td { padding: 0.5rem; } }
     /* ponytail: Hero ist Landscape, ganzes Bild zeigen statt 4/3-Crop */
@@ -212,7 +212,6 @@
       <div class="umruestung-wege fade-in">
         <div class="umruestung-weg">
           <div class="umruestung-weg-header">
-            <div class="step-number">!</div>
             <div>
               <h3>Das Mindestlast-Problem</h3>
               <p>Alte Dimmer wurden für Glühbirnen gebaut und brauchen oft eine Mindestleistung von 20 Watt oder mehr, um überhaupt zu funktionieren. Eine moderne LED verbraucht aber vielleicht nur 5 Watt - der Dimmer „denkt" also, es sei gar keine Lampe angeschlossen. Die Folge: wildes Flackern oder gar kein Licht.</p>
@@ -221,7 +220,6 @@
         </div>
         <div class="umruestung-weg">
           <div class="umruestung-weg-header">
-            <div class="step-number">!</div>
             <div>
               <h3>Der tote Weg (Dead Travel)</h3>
               <p>Sie drehen am Dimmer, aber auf den ersten Zentimetern des Drehwegs passiert überhaupt nichts. Dann wird das Licht ganz am Ende plötzlich schlagartig hell - ein gleichmäßiges Hochdimmen ist so nicht möglich.</p>
@@ -230,7 +228,6 @@
         </div>
         <div class="umruestung-weg">
           <div class="umruestung-weg-header">
-            <div class="step-number">!</div>
             <div>
               <h3>Glimmen im Aus-Zustand</h3>
               <p>Die LED leuchtet schwach, obwohl der Schalter auf „Aus" steht. Ursache: winzige Restströme, die noch durch die Leitungen fließen - so wenig, dass eine Glühbirne nicht reagiert hätte, aber genug für eine empfindliche LED.</p>
@@ -239,7 +236,6 @@
         </div>
         <div class="umruestung-weg">
           <div class="umruestung-weg-header">
-            <div class="step-number">!</div>
             <div>
               <h3>Summen und Brummen</h3>
               <p>Günstige LED-Treiber (die kleinen Netzteile im Inneren) erzeugen beim Dimmen ein nerviges, hochfrequentes Summen oder Brummen - leise, aber in ruhigen Räumen deutlich hörbar.</p>
@@ -248,7 +244,6 @@
         </div>
         <div class="umruestung-weg">
           <div class="umruestung-weg-header">
-            <div class="step-number">!</div>
             <div>
               <h3>Unterschiedliche Helligkeit</h3>
               <p>Mehrere Leuchten am selben Dimmer erscheinen unterschiedlich hell, weil die Betriebsgeräte leicht voneinander abweichen. <strong>Lösung: DALI</strong> - ein digitales Steuersystem, bei dem jede Leuchte exakt den gleichen Befehl erhält und deshalb absolut gleich reagiert.</p>

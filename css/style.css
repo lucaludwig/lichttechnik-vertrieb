@@ -3035,34 +3035,9 @@ li, figcaption, dd { text-wrap: pretty; }
 }
 
 
-/* Ueber uns: freigestelltes Portraet frei auf der Seite, Lichtschein hinter dem Kopf */
-.about-image--portrait {
-  aspect-ratio: auto;
-  overflow: visible;
-  border-radius: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  isolation: isolate;
-}
-.about-image--portrait::before {
-  content: '';
-  position: absolute;
-  inset: 4% 8% 30%;
-  z-index: -1;
-  background: radial-gradient(closest-side, rgba(246, 184, 0, 0.28), rgba(246, 184, 0, 0.08) 60%, transparent);
-}
-.about-image--portrait img {
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-  display: block;
-  /* Schnittkanten an Schultern und Rumpf weich ausblenden */
-  -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 97%), linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
-  -webkit-mask-composite: source-in;
-          mask-image: linear-gradient(to bottom, #000 68%, transparent 97%), linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
-          mask-composite: intersect;
-}
+/* Ueber uns: Portraet als ruhiges Studiofoto im Seitenraster */
+.about-image--portrait { aspect-ratio: 4 / 5; }
+.about-image--portrait img { height: 100%; object-fit: cover; object-position: 50% 20%; }
 
 /* DIN-Pruefzeichen: einfarbige Maske statt Bild mit weissem Kasten */
 .din-mark {
@@ -3090,4 +3065,54 @@ li, figcaption, dd { text-wrap: pretty; }
 .din-badge-text small { font-size: 0.8125rem; color: var(--text-light); white-space: nowrap; font-variant-numeric: tabular-nums; }
 @media (max-width: 600px) {
   .din-badge { border-left: 0; padding-left: 0; }
+}
+
+/* Seitenweiter Feinschliff 27.11.: Befunde aus Screenshot-Review aller Seiten */
+/* Ueberschriften nie mitten im Wort trennen; balance + overflow-wrap reichen */
+@media (max-width: 600px) {
+  h1, h2, h3 { hyphens: manual; -webkit-hyphens: manual; }
+}
+/* Links in Formular-Hinweisen in Markenfarbe statt Browser-Blau */
+.form-check a { color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.2em; }
+/* Karte: ruhige Flaeche, solange das Google-iframe laedt oder blockiert ist */
+.map-container { background: var(--bg-alt); }
+/* Kennzahlen: Zahlen auf einer Linie; ungerade letzte Zahl mobil ueber volle Breite */
+.stats-strip-items { align-items: start; }
+@media (max-width: 960px) {
+  .stats-strip-item:last-child:nth-child(odd) { grid-column: 1 / -1; padding-left: 0; border-left: 0; }
+}
+/* Mobil: kompakterer Sektionsrhythmus, Zertifikatsleiste und Labels lesbar */
+@media (max-width: 600px) {
+  .section { padding: 4rem 0; }
+  .section-spacious { padding: 4.5rem 0; }
+  .cert-item span, .cert-item strong { font-size: 0.8125rem; }
+}
+.umruestung-label { font-size: 0.8125rem; }
+/* Footer-Links fuer aeltere Leser kontrastreicher */
+.footer-links a { color: rgba(255, 255, 255, 0.82); }
+/* Produktkarten: Beschreibung nicht mitten im Satz kappen, Link immer auf gleicher Hoehe */
+.product-card p { -webkit-line-clamp: 3; }
+.product-card .card-body .btn-product { margin-top: auto; padding-top: 1rem; align-self: flex-start; }
+/* Zentrierte Kurzseiten (404, Newsletter-Danke): Headline und Text auf einer Achse */
+.container--center { text-align: center; }
+.container--center > h1, .container--center > p { margin-inline: auto; }
+/* Rechtstexte: ruhigerer Zeilenabstand */
+.legal-content p { line-height: 1.65; color: var(--text-light); }
+/* Mobil: Platz fuer die feste Leiste im Footer statt weissem Streifen unter dem Footer */
+@media (max-width: 768px) {
+  body:has(.sticky-cta) { padding-bottom: 0; }
+  body:has(.sticky-cta) .footer { padding-bottom: calc(56px + var(--sai-bottom)); }
+}
+/* Dunkles CTA-Band und Footer klar trennen */
+.footer { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+/* Lichtwissen Dimmen: Dimmbar-Zeichen als Pruefzeichen auf ruhiger Flaeche statt hochskaliertem Scan */
+.about-image.is-square:has(img[src*="dimmbar-symbol"]) { background: var(--bg-alt); display: grid; place-items: center; }
+.about-image.is-square img[src*="dimmbar-symbol"] { width: 42%; height: auto; object-fit: contain; }
+/* Drei Kennzahlen mobil in einer Reihe statt 2 + 1 */
+@media (max-width: 600px) {
+  .stats-strip-items:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .stats-strip-items:has(> :nth-child(3):last-child) > .stats-strip-item { grid-column: auto; padding: 0 0.75rem; border-left: 1px solid rgba(255, 255, 255, 0.14); }
+  .stats-strip-items:has(> :nth-child(3):last-child) > .stats-strip-item:first-child { padding-left: 0; border-left: 0; }
+  .stats-strip-items:has(> :nth-child(3):last-child) .trust-number { font-size: 2rem; }
+  .stats-strip-items:has(> :nth-child(3):last-child) .stats-strip-label { font-size: 0.8125rem; }
 }

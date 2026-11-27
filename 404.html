@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#0f2744">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Seite nicht gefunden | Lichttechnik und Vertrieb</title>
-  <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/logo.png">
   <meta name="robots" content="noindex">
   <meta property="og:title" content="Seite nicht gefunden | Lichttechnik und Vertrieb">
   <meta property="og:type" content="website">
@@ -19,39 +19,75 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/logo.png" alt="Lichttechnik und Vertrieb Logo" width="757" height="534">
+      <a href="/index.html" class="nav-logo">
+        <img src="/images/logo.png" alt="Lichttechnik und Vertrieb Logo" width="757" height="534">
         <span>Lichttechnik &amp; Vertrieb</span>
       </a>
       <button class="hamburger" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="umruestung/">LED-Umrüstung</a></li>
-        <li><a href="beleuchtungsplanung.html">3D-Planung</a></li>
-        <li><a href="index.html#referenzen">Referenzen</a></li>
-        <li><a href="angebote.html">Angebote</a></li>
-        <li><a href="uber-uns.html">Über uns</a></li>
-        <li><a href="kontakt.html?produkt=Kostenloser%20Licht-Check" class="nav-cta">Licht-Check anfragen</a></li>
+        <li><a href="/umruestung/">LED-Umrüstung</a></li>
+        <li><a href="/beleuchtungsplanung.html">3D-Planung</a></li>
+        <li><a href="/index.html#referenzen">Referenzen</a></li>
+        <li><a href="/angebote.html">Angebote</a></li>
+        <li><a href="/uber-uns.html">Über uns</a></li>
+        <li><a href="/kontakt.html?produkt=Kostenloser%20Licht-Check" class="nav-cta">Licht-Check anfragen</a></li>
       </ul>
     </div>
   </nav>
 
   <main>
     <section class="page-header" style="min-height: 60vh; display: flex; align-items: center;">
-      <div class="container" style="text-align: center;">
+      <div class="container container--center">
         <h1 style="font-size: 6rem; margin-bottom: 0.5rem;">404</h1>
         <p style="font-size: 1.25rem; margin-bottom: 2rem;">Diese Seite wurde nicht gefunden.</p>
-        <a href="index.html" class="btn btn-primary">Zur Startseite</a>
+        <a href="/index.html" class="btn btn-primary">Zur Startseite</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-bottom">
-        &copy; 2026 Rainer Ludwig. Alle Rechte vorbehalten.
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="/images/logo.png" alt="Logo" width="757" height="534">
+            <span>Lichttechnik &amp; Vertrieb</span>
+          </div>
+          <p>Ihr Partner für professionelle Beleuchtungslösungen. Beratung, Planung und Vertrieb seit über 35 Jahren.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html">Startseite</a></li>
+            <li><a href="/uber-uns.html">Unternehmen</a></li>
+            <li><a href="/produkte.html">Produkte</a></li>
+            <li><a href="/angebote.html">Angebote</a></li>
+            <li><a href="/beleuchtungsplanung.html">3D-Planung</a></li>
+            <li><a href="/lichtwissen/">Lichtwissen</a></li>
+            <li><a href="/kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="/impressum.html">Impressum</a></li>
+            <li><a href="/datenschutz.html">Datenschutz</a></li>
+            <li><a href="/agb.html">AGB</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+4915154854865">+49 1515 4854865</a></li>
+            <li><a href="mailto:info@lichttechnik-vertrieb.de">info@lichttechnik-vertrieb.de</a></li>
+            <li>Friedenstr. 3 b</li>
+            <li>63150 Heusenstamm</li>
+          </ul>
+        </div>
       </div>
+      <div class="footer-bottom">&copy; 2026 Rainer Ludwig. Alle Rechte vorbehalten.</div>
     </div>
   </footer>
 
@@ -73,6 +109,6 @@
     var path = location.pathname.replace(/\/index\.php\//i, '').replace(/\/$/, '').split('/').pop();
     if (path && map[path]) location.replace(map[path]);
   </script>
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
